@@ -1,4 +1,16 @@
-# Published restoration validation — 2026-11-01
+# Presentation validation
+
+## IT-1 — 2026-11-01 (current)
+
+- Reproduced the reported darkness with Chrome WebContentsForceDark: previous light backgrounds became approximately RGB 34/32/28. CSS `color-scheme: only light` and an early HTML color-scheme declaration now keep them light (RGB 255/253/248) in normal and forced-dark rendering.
+- Slides 3, 5 and 6 use a bright paper background. Maps render with normal blending and increased brightness, preserving every geographic position and both route definitions. Mobile letterboxing follows the light background on these slides.
+- Added a transparent 3D illustration from the supplied controller photo to slide 4, labelled Controller. It appears on reveal 7; the card / wristband follow on reveal 8. Reveal counts are now 3 / 5 / 2 / 8 / 5 / 4 / 3.
+- Normal / forced-dark screenshots were inspected for slides 3–7. Slide 7's normal screenshot is pixel-identical to the previous version; other slide sections and both map source files are unchanged apart from the requested slide-4 addition and theme styling.
+- Local browser verified controller/carrier reveal order, both complete routes, optional 6/7-slide mode, mobile light background / bounds and a working downloaded standalone HTML containing the new controller and theme guard.
+- The same four targeted workflows passed anonymously on the published site, including forced dark mode and the downloaded copy, with zero JavaScript errors.
+- Updated public files were verified against local hashes by the publisher (18 served files). The existing Netlify site ID and customer URL are retained.
+
+## Initial restored publication — 2026-11-01 (historical)
 
 Production: https://benghazi-park-one-card.netlify.app/
 

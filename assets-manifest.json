@@ -31,6 +31,10 @@
     "sha256": "2004012fcef7bf6bcba76c72651dfd97ae7cc33f7a6107c5588b979e38fa3b07",
     "bytes": 1205898
   },
+  "controller.png": {
+    "sha256": "caa20af16787e82e53e7658b04102da898784cbb1490b8dd0228e0ca53839e3b",
+    "bytes": 1181149
+  },
   "hero.png": {
     "sha256": "aa40f4614203d5b8781e95d99e60d8c889ce9bcbebeac7f45df6e314380ed310",
     "bytes": 2369905
