@@ -89,6 +89,26 @@
   ['future.note','.future-slide .bottom-note','<span>مقترحات للنقاش. الوظائف والصلاحيات وآلية ربط الملفات لم تُحدّد بعد.</span>'],
   ['future.concept','.concept-label','واجهة توضيحية · لا تتضمن بيانات فعلية للزوار'],
   ['future.footer','.future-slide footer>span:first-child','وحدة اختيارية · خاضعة للمراجعة التقنية والتجارية'],
+  ['risk.eyebrow','.risk-slide .eyebrow','06 / الاستعداد للإطلاق'],
+  ['risk.kicker','.risk-kicker','<i></i> للتأخير عواقب'],
+  ['risk.title','.risk-heading h1','مخاطر<br><em>تأخير الإطلاق.</em>'],
+  ['risk.sub','.risk-heading>p','افتتاح الحديقة دون نظام دفع موحّد<br>قد يضيف تكاليف تشغيلية ويجعل<br>الربط لاحقاً أكثر صعوبة.'],
+  ['risk.context','.risk-context','حلول مؤقتة.<br><strong>تكاليف تدوم.</strong>'],
+  ['risk.tag','.potential-tag','<span></span>آثار تشغيلية محتملة'],
+  ['risk.costTitle','.risk-card:nth-child(1) h2','ارتفاع تكاليف التشغيل'],
+  ['risk.costNote','.risk-card:nth-child(1) p','تذاكر ورقية، وموظفون إضافيون،<br>ونقاط دفع إضافية عند الألعاب.'],
+  ['risk.fragmentedTitle','.risk-card:nth-child(2) h2','أنظمة منفصلة'],
+  ['risk.fragmentedNote','.risk-card:nth-child(2) p','أنظمة بيع ومحاسبة مستقلة.<br>مطابقة الحسابات وتجميعها يدوياً.'],
+  ['risk.flowTitle','.risk-card:nth-child(3) h2','تباطؤ حركة الزوار'],
+  ['risk.flowNote','.risk-card:nth-child(3) p','تعدّد الطوابير قد يؤخّر الدخول ويقلّل<br>عدد الزوار الذين يمكن خدمتهم وقت الذروة.'],
+  ['risk.revenueTitle','.risk-card:nth-child(4) h2','زيادة مخاطر فقدان الإيرادات'],
+  ['risk.revenueNote','.risk-card:nth-child(4) p','نقاط نقدية أكثر قد تزيد الأخطاء<br>والفروقات وتسرّب الإيرادات.'],
+  ['risk.visibilityTitle','.risk-card:nth-child(5) h2','رؤية مالية محدودة'],
+  ['risk.visibilityNote','.risk-card:nth-child(5) p','صعوبة الحصول على صورة موحّدة للمبيعات<br>في أنحاء الحديقة لحظة بلحظة.'],
+  ['risk.expansionTitle','.risk-card:nth-child(6) h2','ارتفاع كلفة التوسّع مستقبلاً'],
+  ['risk.expansionNote','.risk-card:nth-child(6) p','معدات وربط وتدريب إضافي قد ترفع<br>التكلفة الكلية وتحدّ من قابلية التوسّع.'],
+  ['risk.takeaway','.risk-takeaway','<span></span><strong>إطلاق موحّد ومتزامن.</strong> إجراءات وتكاليف مكررة أقل.'],
+  ['risk.footer','.risk-slide footer>span:first-child','حديقة واحدة · نظام واحد متصل'],
   ['closing.eyebrow','.closing .eyebrow','النتيجة المتوقعة'],
   ['closing.title','.closing h2','زيارة أفضل.<br><em>رؤية أوضح</em><br>للحديقة.'],
   ['closing.guestMicro','.closing-benefits article:first-child .micro','للزائر'],
@@ -108,6 +128,8 @@
   'name.system':['One connected system','نظام واحد متصل'],
   'name.service':['Card service across the park','خدمة البطاقة في أنحاء الحديقة'],
   'name.future':['Connected with the guest','على تواصل مع الزائر'],
+  'name.risk':['The risks of delay','مخاطر تأخير الإطلاق'],
+  'a11y.risk':['The risks of delaying the unified payment system launch','مخاطر تأخير إطلاق نظام الدفع الموحّد'],
   'name.closing':['A better visit','زيارة أفضل'],
   'ui.controls':['Presentation controls','أدوات العرض'],
   'ui.deck':['Benghazi Park presentation','عرض حديقة بنغازي'],
@@ -163,7 +185,7 @@
   'a11y.secondDesks':['Second entrance: 3 universal cash desks','المدخل الثاني: 3 شبابيك خدمة متكاملة']
  };
  const attributes=[
-  ['#stage','aria-label','ui.deck'],['#controls','aria-label','ui.controls'],
+  ['#stage','aria-label','ui.deck'],['#controls','aria-label','ui.controls'],['.risk-slide','aria-label','a11y.risk'],
   ['#previous','title','ui.previous'],['#previous','aria-label','ui.previous'],
   ['#next','title','ui.nextTitle'],['#replay','title','ui.replay'],['#replay','aria-label','ui.replay'],
   ['#future-toggle','title','ui.futureTitle'],['#fullscreen','title','ui.fullscreen'],['#fullscreen','aria-label','ui.fullscreen'],
@@ -184,7 +206,8 @@
   ['#service-map .terrain',"The park's two entrances and internal top-up service points",'مدخلا الحديقة ونقاط خدمة الشحن الداخلية'],
   ['.cashier-scene .sprite','The guest gives a small park card to a cashier','الزائر يقدّم بطاقة الحديقة لموظف الخدمة','aria-label'],
   ['.future-phone','A conceptual guest-service phone, park card and wristband','تصوّر لهاتف لخدمة الزائر مع بطاقة الحديقة وسوارها','aria-label'],
-  ['.closing .hero-image','The Benghazi Park girl with her small park card','فتاة حديقة بنغازي مع بطاقة الحديقة الصغيرة']
+  ['.closing .hero-image','The Benghazi Park girl with her small park card','فتاة حديقة بنغازي مع بطاقة الحديقة الصغيرة'],
+  ['.risk-hero','A clay hourglass, paper tickets and coins illustrate the operational risks of delay','ساعة رملية وتذاكر ورقية وعملات توضّح المخاطر التشغيلية للتأخير']
  ];
  const elements=[],bindings=[];
  let language='en';
@@ -201,7 +224,7 @@
  descriptions.forEach(([selector,en,ar,attribute='alt'],i)=>{const key='image.'+i;messages[key]=[en,ar];document.querySelectorAll(selector).forEach(el=>bind(el,key,attribute));});
  attributes.forEach(([selector,attr,key])=>bind(document.querySelector(selector),key,attr));
  bind(document.getElementById('next'),'ui.next');bind(document.getElementById('help'),'ui.help');
- document.querySelectorAll('.slide').forEach((el,i)=>bind(el,['name.cover','name.journey','name.map','name.system','name.service','name.future','name.closing'][i],'data-name'));
+ [['.cover','name.cover'],['.journey','name.journey'],['.map-slide','name.map'],['.system-slide','name.system'],['.service-slide','name.service'],['.future-slide','name.future'],['.risk-slide','name.risk'],['.closing','name.closing']].forEach(([selector,key])=>bind(document.querySelector(selector),key,'data-name'));
  const toggle=document.getElementById('language-toggle');
  function setLanguage(value){
   language=value==='ar'?'ar':'en';

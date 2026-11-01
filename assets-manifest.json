@@ -55,6 +55,10 @@
     "sha256": "2c309a979a054a00caf93ec375e1a5f4af4c68617736ab2fb50952808e807add",
     "bytes": 2460693
   },
+  "risk-delay-hero.png": {
+    "sha256": "6e8b9a2aa97c69ad73583250bac1dfb76f7ead8b8df67dea90b09cb9217f22ec",
+    "bytes": 1534617
+  },
   "wheel.png": {
     "sha256": "9a88dc120d51ce4c436d9061d991d1da1ad131346ce1de1698f43c55206278fa",
     "bytes": 199501

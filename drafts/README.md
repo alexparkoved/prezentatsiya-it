@@ -1,9 +1,7 @@
-# Pending presentation work
+# Archived approved design reference
 
-The customer-facing seven-slide English deck is under review. Do not add the risk draft or replace the live deck until requested. The owner subsequently authorized preparing bilingual functionality now, independently of the pending risk design.
+The owner approved the risk-slide mockup on 2026-11-01 and requested immediate integration and publication of the complete English/Arabic presentation. The risk slide is now integrated in index.html immediately before the original closing slide. English/Arabic copy is in i18n.js and its scoped layout in presentation.css. All eight slides use the existing single cover-only language selector.
 
-1. Pending: the owner sent the first English risk-slide mockup to the customer for approval. Source is risk-delay/; outputs remain outside Git. It is excluded from the deck.
-2. Prepared meanwhile, as subsequently requested: a separate seven-slide English/Arabic review version. ONE discreet selector is on the FIRST slide, BOTTOM RIGHT; no selector on other slides. All text, map legends, route status and controls switch together. Cairo 700/900 fonts and RTL layouts are included in the review snapshot; production is unchanged. See ../bilingual-preview.json for its URL.
-3. When the owner supplies the approved risk slide: insert it immediately before the current final slide, translate it to both languages, and assemble the updated presentation. The current mockup is not presumed approved. No need to repeat the language-selector work.
+risk-delay/ retains the original standalone English design for provenance. It is no longer a pending task. Edit the integrated deck for subsequent revisions, rather than rebuilding the production presentation from this archived draft.
 
-The risk visual is a new transparent clay hourglass / paper tickets / coins / small warning symbol. The image-generation prompt and provenance should be kept with the draft; media stay outside Git. The existing site content and its URL must remain unchanged during this approval stage.
+The historical seven-slide bilingual review is recorded in ../bilingual-preview.json. The finished eight-slide canonical publication is recorded in ../deployment.json. All media stay outside Git.

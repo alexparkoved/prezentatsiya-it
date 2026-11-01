@@ -1,5 +1,16 @@
 # Presentation validation
 
+## Finished eight-slide English / Arabic publication — 2026-11-01 (latest)
+
+The owner approved the risk-slide design and authorized its integration and publication. The approved six-panel risk slide is penultimate in the complete eight-slide English/Arabic deck. Its six impacts reveal on clicks 1–6, with the takeaway on click 7. The original closing remains last. One small language switch is visible only on the cover.
+
+- Rendered and inspected every slide in both languages. No text overflows or JavaScript errors. The approved English risk composition is retained; Arabic receives RTL ordering, Cairo typography and scoped spacing. All risk copy, kicker, context, impact tag, takeaway, footer, image description, section label and slide name are translated.
+- All 44 forward transitions and 44 reverse transitions passed in each language. Language switching preserves reveal progress and autoplay state. Both completed map routes persist; an in-progress route continues through a language change. All seven previously approved slide contents are identical to the bilingual review, excluding regenerated footer numbers.
+- Audited all Arabic slide text: no English labels remain except the intentional NFC acronym. English source is restored by the same switch. Both built and browser-downloaded standalone copies contain the eight slides, embedded Arabic fonts and the new illustration.
+- Checked every page number in both languages: 01/08 through 08/08, with risk 07/08 and final 08/08. Optional Future exclusion produces 01/07 through 07/07 and keeps risk 06/07 before final 07/07. The single language selector is hidden on all later slides.
+- Canonical publication https://benghazi-park-one-card.netlify.app/ passed anonymous public Chromium checks on five profiles: desktop 1600×900, laptop 1366×768, phone 390×844, landscape 844×390 and tablet 768×1024. Both languages, all eight slides, both routes, page numbers, penultimate risk placement, touch / keyboard navigation, canvas bounds and the pure-white sixth slide passed. These are browser emulations, not physical-device tests. Zero JavaScript errors.
+- The publisher verified all 22 public source/media files against local hashes. The existing site ID and canonical customer URL are retained. A fresh recovery into an empty external directory restored and SHA256-verified all 16 media files, including Cairo and the approved risk illustration. Sources and non-secret deployment metadata are preserved in Git; binaries and self-contained HTML stay outside it.
+
 ## English / Arabic review — 2026-11-01 (separate preview)
 
 The owner authorized bilingual preparation before approval of the risk slide. Seven current slides only; the risk draft remains excluded. One cover-only English / العربية switch sits at bottom right and remains usable at phone scale. Switching updates the seven slides, Arabic RTL typography, dynamic map legend / route captions / statuses, controls, slide names and accessibility descriptions. It preserves the current reveal and running animation; English is the default on a fresh visit, and ?lang=ar is supported.

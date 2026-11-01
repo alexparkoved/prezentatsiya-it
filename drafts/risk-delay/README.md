@@ -1,6 +1,6 @@
 # The risks of delay — first English mockup
 
-Proposed penultimate slide, not integrated or published. The six risk groups correspond to the owner's approved text: operating costs, fragmented systems, slower peak-time flow, cash/revenue risk, financial visibility, later integration/scaling costs. All are presented as potential impacts of opening without the shared payment system, without invented amounts, percentages or claims of measured losses.
+Approved by the owner and integrated as the penultimate slide on 2026-11-01. This directory retains the original standalone English design reference. The finished deck uses the same approved composition, Arabic localization and seven shared click reveals. The six risk groups correspond to the owner's approved text: operating costs, fragmented systems, slower peak-time flow, cash/revenue risk, financial visibility, later integration/scaling costs. All are presented as potential impacts of opening without the shared payment system, without invented amounts, percentages or claims of measured losses.
 
 Composition: original Benghazi Park logo / Rubik / Manrope / cream background; deep brick-red emphasis on delay; clay hourglass, paper tickets, coins and a small warning triangle; six compact risk panels; a coordinated-launch takeaway. The plate is light and warm rather than a dark alarm screen. Placeholder page number 07/08 represents its proposed position after slide 6 and before the current final slide.
 

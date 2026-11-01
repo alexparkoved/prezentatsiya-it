@@ -2,20 +2,13 @@
 
 Public presentation: https://benghazi-park-one-card.netlify.app/
 
-Seven-slide animated English presentation for Benghazi Park. Restored on 2026-11-01 from the owner's brief, reference HTML files, original logo/character and all later corrections in the conversation. The sixth future-options slide can be excluded, leaving six slides. This source is preserved on the repository's main branch; media do not belong in Git.
+Eight-slide animated English/Arabic presentation for Benghazi Park, including the approved penultimate slide “The risks of delay”. One small English / العربية switch appears at the bottom right of the first slide only. The chosen language applies to all eight slides, map legends, route captions, controls and accessibility labels. Switching preserves the current reveal. A fresh viewing session starts in English; `?lang=ar` opens directly in Arabic.
 
-The current source also contains an English/Arabic review version; production above remains English. The separate review address is recorded in bilingual-preview.json. One small English / العربية switch appears at the bottom right of the first slide only. The selected language applies to all seven slides, map legend, route captions, controls and accessibility labels. It preserves the current reveal; a new viewing session starts in English. `?lang=ar` opens the Arabic version directly. The owner will supply the approved risk slide later; it is not included in this version.
+The future-options telephone slide can be excluded, leaving seven slides. Page numbering updates automatically: risk is 07/08 and closing 08/08 by default, or 06/07 and 07/07 when Future is off. The final outcome remains last in both modes.
 
-To prepare or update the bilingual review without replacing the customer's production link:
+The owner approved publication of this assembled version on 2026-11-01. The original seven-slide deck was recovered from the owner's brief, reference HTML files, original logo/character and subsequent corrections. Editable text sources are preserved in the repository; media stay outside Git. The previous separate seven-slide bilingual review remains recorded in bilingual-preview.json for history and media recovery. Use the main public address above for the finished presentation.
 
-```sh
-python3 restore_assets.py
-python3 build.py --out /workspace/shared/benghazi-bilingual-preview
-python3 publish.py plan --out /workspace/shared/benghazi-bilingual-preview
-python3 publish.py preview --out /workspace/shared/benghazi-bilingual-preview
-```
-
-The preview command creates a draft on the existing Netlify site and verifies that production did not change. Its immutable review address and deployment ID are kept separately. Media recovery tries that snapshot before the production site and verifies the same byte counts and SHA256 hashes. Cairo font files remain outside Git. The source English text remains in index.html; Arabic text and shared interface messages are in i18n.js, with Arabic-only styling at the end of presentation.css. Arabic layouts keep the approved geography and artwork while giving text RTL alignment and appropriate spacing.
+English source text stays in index.html; Arabic text and interface messages are in i18n.js. Arabic-only typography and spacing are scoped in presentation.css. Arabic uses the original Cairo font and RTL text while preserving approved map geography and artwork. Media recovery tries the recorded review snapshot and production site, verifying byte counts and SHA256 hashes.
 
 ## Show the presentation
 
@@ -25,7 +18,7 @@ The same site ID is reused for updates, preserving the customer's URL. Do not cr
 
 ## Files
 
-index.html: seven reviewed stories; presentation.css: layout and motion; presentation.js: navigation and auto play; map-data.js: destinations / legend / routes; map.js: miniature pins, service points and two successive animations. Slide 4 includes the photo-based Controller illustration; it has eight reveal steps. The presentation declares an explicit light color scheme to prevent browser auto-darkening, while the closing slide retains its designed dark treatment. Original owner coordinates are retained as ownerPoint metadata where the regenerated image's coordinate frame differs. The restored frame positions are matched to the actual landmarks in the new clay map.
+index.html: eight reviewed stories; presentation.css: layout and motion; presentation.js: navigation and auto play; map-data.js: destinations / legend / routes; map.js: miniature pins, service points and two successive animations. Slide 4 includes the photo-based Controller illustration; it has eight reveal steps. The presentation declares an explicit light color scheme to prevent browser auto-darkening, while the closing slide retains its designed dark treatment. Original owner coordinates are retained as ownerPoint metadata where the regenerated image's coordinate frame differs. The restored frame positions are matched to the actual landmarks in the new clay map.
 
 build.py: website, offline HTML and ZIP. publish.py: read-only authentication, local upload validation, production publication and HTTP verification. restore_assets.py: reconstruct the external media directory from the production site's media and SHA256 manifest. assets-manifest.json and deployment.json contain non-secret metadata only.
 
@@ -40,7 +33,7 @@ python3 publish.py check
 
 If the default shell sandbox cannot connect to the configured proxy, use the execution tool's supported escalation. Keep the inherited proxy/CA settings and TLS checks. Never print the NETLIFY_AUTH_TOKEN binding or replace its placeholder manually. No package installation is needed for building or publishing (Python standard library only).
 
-After changes, inspect every slide in Chromium and test actual clicks, both routes and the optional 6/7-slide mode. Then:
+After changes, inspect every slide in Chromium and test actual clicks, both routes and the optional 7/8-slide mode. Then:
 
 ```sh
 python3 build.py
@@ -60,4 +53,4 @@ Light blue: second entrance 2 → boats 6 → food court 4 → playground 13 →
 
 13 universal entrance cash desks: main 10 + second 3; nine internal top-up points; fourteen food trucks. Zoo viewing is free. Wallet top-up and admission are separate operations. Sports integration is proposed. CRM, staff tools, profiles and online top-up are future options, not existing deployment claims. No invented guest data, balances or performance percentages. The model and hardware are functional illustrations. The heroine's composition animates; her face and hands are not video-animated.
 
-Further visual adjustments should retain the approved seven-slide narrative and the owner's targeted corrections. See RECOVERY.md for provenance.
+Further visual adjustments should retain the approved eight-slide narrative and the owner's targeted corrections. See RECOVERY.md for provenance.
