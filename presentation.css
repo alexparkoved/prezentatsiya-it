@@ -36,3 +36,10 @@ body.light-canvas{background:#fffdf8}
 .controller-node h3{position:absolute;left:110px;top:66px;font-size:24px;line-height:1.08;letter-spacing:-.8px;color:#5e5548}
 .system-carriers{left:835px;top:705px;width:225px;height:112px}
 .system-carriers-caption{left:800px;top:821px;width:290px}
+
+/* Sixth slide only: white canvas and brighter unblended concept illustration. */
+.future-slide{background:#fff!important;background-image:none!important;color-scheme:only light}
+.future-slide .future-phone{mix-blend-mode:normal;filter:contrast(.96) brightness(1.16) saturate(.94)}
+.future-slide .feature-icon{filter:brightness(1.07)}
+.future-slide .future-feature h3{color:#383c35}
+.future-slide .future-feature p{color:#696252}

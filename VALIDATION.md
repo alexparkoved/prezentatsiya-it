@@ -1,5 +1,9 @@
 # Presentation validation
 
+## Sixth-slide follow-up — 2026-11-01 (latest)
+
+The owner identified the telephone slide. Its background is now pure RGB 255/255/255 with an explicit inline light background, no background gradient, normal phone-image blending and a brighter display filter. Only section 6 and CSS rules scoped to .future-slide changed. Sections 1–5 and 7, all map data, route code and navigation are byte-identical. Public forced-dark browser checks passed all four reveals and a working downloaded copy; closing retains its original treatment. The publisher verified all 18 public files.
+
 ## IT-1 — 2026-11-01 (current)
 
 - Reproduced the reported darkness with Chrome WebContentsForceDark: previous light backgrounds became approximately RGB 34/32/28. CSS `color-scheme: only light` and an early HTML color-scheme declaration now keep them light (RGB 255/253/248) in normal and forced-dark rendering.

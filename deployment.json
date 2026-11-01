@@ -1,9 +1,9 @@
 {
   "site_id": "cd50d3d4-518d-4dfd-b48f-07bd972ad821",
   "url": "https://benghazi-park-one-card.netlify.app",
-  "deploy_id": "6ae6f160cf4f3c095a1c6964",
+  "deploy_id": "6ae6f5338628bc2f9384e6cd",
   "upload_mode": "files",
   "pending_files": [],
-  "manifest_sha256": "2b0877bf110b07d8cf6850f8b10c52c86d0dd8b497a61713c5d51b34d4e5ab36",
+  "manifest_sha256": "243c72857c19ff38d55bd863909ddd7f8032420e325c68a8e1773ff71a96c78b",
   "verified_files": 18
 }
