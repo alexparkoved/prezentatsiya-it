@@ -2,6 +2,7 @@
 
 check: read-only authentication; plan: local archive validation;
 publish: create/reuse one site and publish the prepared client folder;
+preview: upload a draft with its own URL, leaving production unchanged;
 verify: verify the recorded production index against the local reviewed file.
 """
 import argparse
@@ -39,7 +40,7 @@ def api(path,method='GET',data=None,content_type='application/json'):
 def files():
     if not (SITE/'index.html').is_file():
         raise RuntimeError('The approved presentation files are absent. Restore Benghazi-Park-Web or the approved standalone HTML before publishing.')
-    allowed={'index.html','presentation.css','presentation.js','map-data.js','map.js','_headers','netlify.toml','Benghazi-Park-Presentation.html'}
+    allowed={'index.html','presentation.css','i18n.js','presentation.js','map-data.js','map.js','_headers','netlify.toml','Benghazi-Park-Presentation.html'}
     found={}
     for path in sorted(SITE.rglob('*')):
         if path.is_symlink(): raise RuntimeError('Symlinks are not allowed in the public folder.')
@@ -86,9 +87,12 @@ def verify(url,found):
     return len(public)
 
 def main():
+    global ROOT,SITE,STATE
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command',choices=['plan','check','publish','verify'])
+    parser.add_argument('command',choices=['plan','check','publish','preview','verify'])
+    parser.add_argument('--out',type=Path,default=ROOT,help='External build output directory')
     args=parser.parse_args()
+    ROOT=args.out.resolve();SITE=ROOT/'Benghazi-Park-Web'
     if args.command=='check':
         account=api('/user')
         if not account.get('id'): raise RuntimeError('Netlify returned an unexpected account response.')
@@ -103,19 +107,25 @@ def main():
         print(json.dumps({'folder':str(SITE),'files':len(found),'upload_bytes':len(zipped),
                           'archive_root':'index.html','remote_changes':False},indent=2))
         return
-    state=read_state()
-    if args.command=='publish':
+    state=read_state();preview=args.command=='preview'
+    if preview:
+        if not state.get('site_id'):raise RuntimeError('A preview requires the existing site ID.')
+        production_site=state['site_id'];STATE=ROOT/'preview-deployment.json'
+        state=json.loads(STATE.read_text()) if STATE.exists() else {'site_id':production_site}
+        if state.get('site_id')!=production_site:raise RuntimeError('Preview site ID differs from production.')
+    if args.command in {'publish','preview'}:
         api('/user')
         if state.get('site_id'): site=api('/sites/'+state['site_id'])
         else:
             site=api('/sites','POST',{'name':'benghazi-park-one-card','sso_login':False})
             state={'site_id':site['id'],'url':public_url(site)}
             save_state(state)
+        previous_production=(site.get('published_deploy') or {}).get('id')
         manifest={'/'+name:hashlib.sha1(content).hexdigest() for name,content in found.items()}
         fingerprint=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest()
-        resume=state.get('pending_files') and state.get('manifest_sha256')==fingerprint
+        resume=state.get('deploy_id') and (preview or state.get('pending_files')) and state.get('manifest_sha256')==fingerprint
         if not resume:
-            deployment=api('/sites/'+state['site_id']+'/deploys?draft=false','POST',{'files':manifest})
+            deployment=api('/sites/'+state['site_id']+'/deploys','POST',{'files':manifest,'draft':preview})
             required=set(deployment.get('required',[]))
             if required-set(manifest.values()): raise RuntimeError('Netlify requested an unknown file hash.')
             state['deploy_id']=deployment['id']
@@ -135,9 +145,16 @@ def main():
             time.sleep(2)
         else: raise RuntimeError('Deployment is still processing. Inspect the recorded deployment before retrying.')
         site=api('/sites/'+state['site_id'])
-        if (site.get('published_deploy') or {}).get('id')!=state['deploy_id']:
-            raise RuntimeError('The deployment is not yet the published production version.')
-        state['url']=public_url(site)
+        published=(site.get('published_deploy') or {}).get('id')
+        if preview:
+            is_draft=deployment.get('draft') is True or deployment.get('context')=='deploy-preview'
+            if not is_draft or deployment.get('published_at') or published!=previous_production:
+                raise RuntimeError('Draft verification failed: inspect the site before continuing.')
+            state['url']=public_url({'url':deployment.get('deploy_ssl_url') or deployment.get('deploy_url')})
+            state['production_deploy_unchanged']=published
+        else:
+            if published!=state['deploy_id']:raise RuntimeError('The deployment is not yet the published production version.')
+            state['url']=public_url(site)
         save_state(state)
     if not state.get('url'): raise RuntimeError('No published address is recorded yet.')
     state['verified_files']=verify(state['url'],found)

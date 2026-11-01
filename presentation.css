@@ -43,3 +43,100 @@ body.light-canvas{background:#fffdf8}
 .future-slide .feature-icon{filter:brightness(1.07)}
 .future-slide .future-feature h3{color:#383c35}
 .future-slide .future-feature p{color:#696252}
+
+/* One unobtrusive language switch, shown only on the cover. This overlay is
+   outside the scaled canvas so it remains usable on a phone. */
+#language-toggle{position:absolute;right:65px;bottom:82px;z-index:25;display:flex;align-items:center;justify-content:center;gap:10px;min-height:40px;padding:5px 11px;border:1px solid #f6ead442;border-radius:24px;background:#23382d91;backdrop-filter:blur(7px);color:#f9edd8;font:600 11px Manrope,Arial,sans-serif;direction:ltr;box-shadow:0 2px 12px #0001}
+#language-toggle[hidden]{display:none}
+#language-toggle>span:last-child{font:700 13px Cairo,Arial,sans-serif}
+#language-toggle i{display:block;position:relative;width:29px;height:16px;border:1px solid #efdfbd77;border-radius:12px;background:#f5e7c822}
+#language-toggle i b{position:absolute;left:3px;top:3px;width:8px;height:8px;border-radius:50%;background:#f6cf9a;transition:transform .2s}
+#language-toggle[aria-checked=true] i b{transform:translateX(13px)}
+#language-toggle:hover{background:#23382dc9;border-color:#f6ead488}
+#language-toggle:focus-visible{outline:2px solid #ffd1a7;outline-offset:4px}
+@media(max-width:600px){#language-toggle{gap:8px;padding:4px 9px;font-size:10px;min-height:36px}#language-toggle>span:last-child{font-size:12px}}
+@media print{#language-toggle{display:none}}
+
+/* Arabic uses the original Cairo face. Geographic objects, route order and
+   illustrations keep their approved coordinates; text receives RTL layout. */
+@font-face{font-family:Cairo;src:url(assets/Cairo-700.ttf) format('truetype');font-weight:400 700;font-display:block}
+@font-face{font-family:Cairo;src:url(assets/Cairo-900.ttf) format('truetype');font-weight:800 900;font-display:block}
+#stage{direction:ltr}
+html:lang(ar) #stage{font-family:Cairo,Arial,sans-serif}
+html:lang(ar) [data-i18n]{direction:rtl;letter-spacing:0;text-align:right;font-family:Cairo,Arial,sans-serif}
+html:lang(ar) h1,html:lang(ar) h2,html:lang(ar) h3{font-family:Cairo,Arial,sans-serif;font-weight:900;letter-spacing:0}
+html:lang(ar) h2{line-height:1.3;font-size:59px}
+html:lang(ar) .eyebrow{font-size:14px;padding-top:14px}
+html:lang(ar) footer>span:first-child{font-size:12px}
+html:lang(ar) .cover-copy{width:590px}
+html:lang(ar) .cover h1{font-size:66px;line-height:1.32}
+html:lang(ar) .chapter{font-size:15px;margin-bottom:16px}
+html:lang(ar) .cover-sub{font-size:22px;line-height:1.65;margin-top:17px}
+html:lang(ar) .card-focus{font-size:15px;gap:12px}
+html:lang(ar) .journey h2{width:670px}
+html:lang(ar) .start-here{font-size:15px}
+html:lang(ar) .journey-stop [data-i18n]{text-align:center}
+html:lang(ar) .place-label{font-size:15px}
+html:lang(ar) .ticket-actions{gap:12px}
+html:lang(ar) .ticket-actions>span{font-size:25px;white-space:nowrap}
+html:lang(ar) .ticket-actions b,html:lang(ar) .journey-stop h3 b{margin-left:0;margin-right:7px}
+html:lang(ar) .journey-stop h3{font-size:29px}
+html:lang(ar) .stop-caption{font-size:16px}
+html:lang(ar) .ticket-carriers span{font-size:12px}
+html:lang(ar) .repeat-caption{font-size:14px}
+html:lang(ar) .bottom-note{border-left:0;border-right:2px solid var(--orange);padding:5px 20px 5px 0;font-size:16px;line-height:1.65}
+html:lang(ar) .bottom-note span{font-size:14px}
+html:lang(ar) .bottom-note strong{margin-right:0;margin-left:7px}
+html:lang(ar) .map-slide h2{font-size:48px;max-width:1000px}
+html:lang(ar) .map-legend>p{font-size:13px}
+html:lang(ar) .map-legend li{direction:rtl;font-family:Cairo,Arial,sans-serif;font-size:18px;line-height:1.55;min-height:31px;text-align:right}
+html:lang(ar) .map-legend small{font-family:Cairo,Arial,sans-serif;font-size:11px}
+html:lang(ar) .map-legend .legend-number,html:lang(ar) .map-number,html:lang(ar) .page-no{direction:ltr;font-family:Rubik,Arial,sans-serif}
+html:lang(ar) .route-panel{direction:rtl;border-left:0;border-right:2px solid #b0c4bc;padding-left:0;padding-right:14px}
+html:lang(ar) .route-panel>b{font-family:Cairo,Arial,sans-serif;font-size:14px;letter-spacing:0}
+html:lang(ar) .route-panel>p{font-size:13px;line-height:1.65}
+html:lang(ar) .route-panel>span{font-size:11px;letter-spacing:0}
+html:lang(ar) .route-key{font-size:10px;gap:14px}
+html:lang(ar) .system-slide h2{width:530px}
+html:lang(ar) .system-hub [data-i18n]{text-align:center}
+html:lang(ar) .system-hub>p{font-size:13px;margin-bottom:15px}
+html:lang(ar) .system-hub h3{font-size:42px;line-height:1.35}
+html:lang(ar) .system-hub>span{font-size:12px;margin-top:15px}
+html:lang(ar) .system-node>div:last-child{flex:1;min-width:0;direction:rtl}
+html:lang(ar) .system-node .micro{font-size:11px;white-space:nowrap}
+html:lang(ar) .system-node h3{font-size:27px;line-height:1.35;margin-top:7px}
+html:lang(ar) .system-node p{font-size:12px;line-height:1.7;margin-top:8px}
+html:lang(ar) .proposed{font-size:11px}
+html:lang(ar) .controller-node h3{font-size:23px;white-space:nowrap;top:63px}
+html:lang(ar) .system-carriers-caption{font-size:10px;text-align:center}
+html:lang(ar) .service-key{font-size:12px}
+html:lang(ar) .service-stats h3{font-size:20px;line-height:1.3;margin-top:7px}
+html:lang(ar) .service-stats p{font-size:10px;line-height:1.6;margin-top:8px}
+html:lang(ar) .service-stats article{min-height:174px}
+html:lang(ar) .cashier-scene h3{font-size:29px}
+html:lang(ar) .cashier-scene p{font-size:16px}
+html:lang(ar) .service-slide .bottom-note{font-size:16px;max-width:990px}
+html:lang(ar) .future-slide h2{width:530px}
+html:lang(ar) .future-tag{font-size:12px}
+html:lang(ar) .future-feature>div:last-child{flex:1;min-width:0;direction:rtl}
+html:lang(ar) .future-feature .micro{font-size:10px}
+html:lang(ar) .future-feature h3{font-size:27px;line-height:1.4;margin-top:8px}
+html:lang(ar) .future-feature p{font-size:15px;line-height:1.8;margin-top:11px}
+html:lang(ar) .future-slide .concept-label{font-size:10px;right:150px}
+html:lang(ar) .closing h2{font-size:66px;line-height:1.3;width:700px}
+html:lang(ar) .closing-benefits .micro{font-size:15px}
+html:lang(ar) .closing-benefits h3{font-size:32px;line-height:1.4;margin-top:15px}
+html:lang(ar) .closing-benefits p{font-size:22px;line-height:1.8;margin-top:16px}
+html:lang(ar) .closing-signoff{font-size:22px}
+html:lang(ar) #controls{font-family:Cairo,Arial,sans-serif;direction:ltr}
+html:lang(ar) #controls button{font-family:Cairo,Arial,sans-serif;line-height:1.5}
+html:lang(ar) #counter{direction:ltr}
+html:lang(ar) #help{direction:rtl;font-family:Cairo,Arial,sans-serif;letter-spacing:0}
+/* Extra breathing room for the longer Arabic service captions. */
+html:lang(ar) .journey-stop .stop-caption{position:relative;display:inline-block;background:var(--paper);padding:0 4px}
+html:lang(ar) .repeat-caption{top:758px}
+html:lang(ar) .service-slide h2{font-size:52px;line-height:1.23}
+html:lang(ar) .service-map{left:40px;top:295px;transform:scale(.9);transform-origin:top left}
+html:lang(ar) .service-slide .bottom-note{top:775px;bottom:auto;max-width:1020px;font-size:15px}
+html:lang(ar) .cashier-scene .sprite{height:250px}
+html:lang(ar) .service-stats b{font-family:Rubik,Arial,sans-serif}

@@ -1,0 +1,11 @@
+{
+  "site_id": "cd50d3d4-518d-4dfd-b48f-07bd972ad821",
+  "deploy_id": "6ae73ac66e324ac21e975fb4",
+  "manifest_sha256": "83301b1ba4a05063d9573dfe5501702a0ec8f6ca104e279ca448f6e480dbb53c",
+  "upload_mode": "files",
+  "pending_files": [],
+  "url": "https://6ae73ac66e324ac21e975fb4--benghazi-park-one-card.netlify.app",
+  "production_deploy_unchanged": "6ae6f5338628bc2f9384e6cd",
+  "verified_files": 21,
+  "purpose": "English/Arabic seven-slide review; pending risk slide excluded; production unchanged"
+}

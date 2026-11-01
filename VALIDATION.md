@@ -1,5 +1,17 @@
 # Presentation validation
 
+## English / Arabic review — 2026-11-01 (separate preview)
+
+The owner authorized bilingual preparation before approval of the risk slide. Seven current slides only; the risk draft remains excluded. One cover-only English / العربية switch sits at bottom right and remains usable at phone scale. Switching updates the seven slides, Arabic RTL typography, dynamic map legend / route captions / statuses, controls, slide names and accessibility descriptions. It preserves the current reveal and running animation; English is the default on a fresh visit, and ?lang=ar is supported.
+
+- Rendered and inspected all seven slides in both languages, including brighter maps and the pure-white telephone slide. Arabic-only spacing adjustments keep the service note separate from the map and the cashier text above the footer.
+- All 36 forward transitions and 36 reverse transitions passed in each language. Mouse, Space and Enter toggle the language without advancing the slide. The optional 6/7-slide mode, autoplay state, completed routes and an in-progress route animation retain their state across language changes.
+- Pixel comparison: all seven English slides match the previous production snapshot exactly when the added language switch is hidden.
+- Both generated and browser-downloaded standalone HTML copies include the Arabic fonts and switch successfully. No English slide labels remain in the Arabic DOM except the intentional NFC acronym.
+- Local responsive checks passed laptop, phone portrait, phone landscape and tablet. Anonymous public Chromium checks then passed five profiles (1600×900, 1366×768, 390×844, 844×390 and 768×1024), both languages, all seven slides, both routes, touch / keyboard navigation, bounds and the white sixth slide. These are browser emulations, not tests on physical devices. No JavaScript errors.
+- Netlify verified all 21 public files of the draft snapshot against local hashes. Production deployment ID and production index bytes remain unchanged. The separate review URL and recovery metadata are in bilingual-preview.json; deployment.json retains the customer's English publication.
+- Fresh recovery from the draft snapshot restored and hash-verified all 15 media files, including Cairo 700/900, into an empty external directory. Media and self-contained delivery HTML stay outside Git.
+
 ## Sixth-slide follow-up — 2026-11-01 (latest)
 
 The owner identified the telephone slide. Its background is now pure RGB 255/255/255 with an explicit inline light background, no background gradient, normal phone-image blending and a brighter display filter. Only section 6 and CSS rules scoped to .future-slide changed. Sections 1–5 and 7, all map data, route code and navigation are byte-identical. Public forced-dark browser checks passed all four reveals and a working downloaded copy; closing retains its original treatment. The publisher verified all 18 public files.

@@ -1,4 +1,12 @@
 {
+  "Cairo-700.ttf": {
+    "sha256": "94d8217842d515dd110f2f7ecde5d901c8e2163ee452f632c3e892379c1c64f7",
+    "bytes": 72880
+  },
+  "Cairo-900.ttf": {
+    "sha256": "a447ffa2519cc164dcea8ebe65faaad76cc785f047a4129e1541cee6a89c485c",
+    "bytes": 72964
+  },
   "Manrope-400.woff2": {
     "sha256": "5a987d1484070f1ea54de7c10ebfa4057a18e379361dbe5fd5c4fa4c2d95ef39",
     "bytes": 7840

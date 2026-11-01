@@ -4,6 +4,19 @@ Public presentation: https://benghazi-park-one-card.netlify.app/
 
 Seven-slide animated English presentation for Benghazi Park. Restored on 2026-11-01 from the owner's brief, reference HTML files, original logo/character and all later corrections in the conversation. The sixth future-options slide can be excluded, leaving six slides. This source is preserved on the repository's main branch; media do not belong in Git.
 
+The current source also contains an English/Arabic review version; production above remains English. The separate review address is recorded in bilingual-preview.json. One small English / العربية switch appears at the bottom right of the first slide only. The selected language applies to all seven slides, map legend, route captions, controls and accessibility labels. It preserves the current reveal; a new viewing session starts in English. `?lang=ar` opens the Arabic version directly. The owner will supply the approved risk slide later; it is not included in this version.
+
+To prepare or update the bilingual review without replacing the customer's production link:
+
+```sh
+python3 restore_assets.py
+python3 build.py --out /workspace/shared/benghazi-bilingual-preview
+python3 publish.py plan --out /workspace/shared/benghazi-bilingual-preview
+python3 publish.py preview --out /workspace/shared/benghazi-bilingual-preview
+```
+
+The preview command creates a draft on the existing Netlify site and verifies that production did not change. Its immutable review address and deployment ID are kept separately. Media recovery tries that snapshot before the production site and verifies the same byte counts and SHA256 hashes. Cairo font files remain outside Git. The source English text remains in index.html; Arabic text and shared interface messages are in i18n.js, with Arabic-only styling at the end of presentation.css. Arabic layouts keep the approved geography and artwork while giving text RTL alignment and appropriate spacing.
+
 ## Show the presentation
 
 The production address is recorded in deployment.json after successful publication. The site opens in a browser without login or installation. Click / right arrow advances one reveal; left arrow goes back; R replays the current slide; P starts/pauses auto play; F opens fullscreen; H hides the controls. Swipe on touch devices. The download-arrow control provides an offline self-contained HTML copy.
