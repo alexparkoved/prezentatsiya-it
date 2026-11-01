@@ -1,0 +1,50 @@
+{
+  "Manrope-400.woff2": {
+    "sha256": "5a987d1484070f1ea54de7c10ebfa4057a18e379361dbe5fd5c4fa4c2d95ef39",
+    "bytes": 7840
+  },
+  "Manrope-600.woff2": {
+    "sha256": "80b86efbef1c9fb66557cc4cc7b6db42db2fd631f1a9b8735f3bbefbb5128799",
+    "bytes": 7872
+  },
+  "Manrope-800.woff2": {
+    "sha256": "e76a69e66b624abdb84cdda1e96b04417afbfb1f3cb684488a867b29bcb3870c",
+    "bytes": 7588
+  },
+  "Rubik-700.woff2": {
+    "sha256": "e82a4d4fd1f282f0790679eb52212c7a1102b77d871c5e47d42220ad5565b691",
+    "bytes": 7900
+  },
+  "Rubik-800.woff2": {
+    "sha256": "9ba6c92a4311535c19fdd3dccdef124bdebb8e27ccd40cb84d2d4c1403735fa6",
+    "bytes": 7852
+  },
+  "brand.png": {
+    "sha256": "3da8660d7d7bf63023dc333cb5f61292cb3aa7e53eb8fa955509a0d45e4c95d9",
+    "bytes": 33532
+  },
+  "card.png": {
+    "sha256": "02faeeff47cf02d67a3ba1e2dd61099f98dffac07e13fec7703966b3eed47a17",
+    "bytes": 169955
+  },
+  "carriers.png": {
+    "sha256": "2004012fcef7bf6bcba76c72651dfd97ae7cc33f7a6107c5588b979e38fa3b07",
+    "bytes": 1205898
+  },
+  "hero.png": {
+    "sha256": "aa40f4614203d5b8781e95d99e60d8c889ce9bcbebeac7f45df6e314380ed310",
+    "bytes": 2369905
+  },
+  "kit.png": {
+    "sha256": "87534d79ddd2c359bd6400f416112e7a04f08c8827c48676d0a30c5ec0f9a492",
+    "bytes": 1907738
+  },
+  "park.png": {
+    "sha256": "0411dd6693f3e34aa964ae8460ad4337f3824e9d2de54169cd4a626194221918",
+    "bytes": 2780970
+  },
+  "wheel.png": {
+    "sha256": "9a88dc120d51ce4c436d9061d991d1da1ad131346ce1de1698f43c55206278fa",
+    "bytes": 199501
+  }
+}
