@@ -1,5 +1,7 @@
 # Benghazi Park — One card. One park experience.
 
+Public presentation: https://benghazi-park-one-card.netlify.app/
+
 Seven-slide animated English presentation for Benghazi Park. Restored on 2026-11-01 from the owner's brief, reference HTML files, original logo/character and all later corrections in the conversation. The sixth future-options slide can be excluded, leaving six slides. This source is preserved on the repository's main branch; media do not belong in Git.
 
 ## Show the presentation

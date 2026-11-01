@@ -1,5 +1,5 @@
 """Restore media from the published site without storing media in Git."""
-import concurrent.futures,hashlib,json,re
+import concurrent.futures,hashlib,json,re,argparse
 from pathlib import Path
 from urllib.request import urlopen
 root=Path(__file__).resolve().parent
@@ -7,7 +7,9 @@ state=json.loads((root/'deployment.json').read_text())
 url=state['url'].rstrip('/')
 if not re.fullmatch(r'https://[a-z0-9-]+\.netlify\.app',url):raise SystemExit('Unexpected media origin.')
 manifest=json.loads((root/'assets-manifest.json').read_text())
-out=Path('/workspace/media/benghazi');out.mkdir(parents=True,exist_ok=True)
+parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,default=Path('/workspace/media/benghazi'));args=parser.parse_args();out=args.out.resolve()
+if out==root or root in out.parents:raise SystemExit('Media must remain outside Git.')
+out.mkdir(parents=True,exist_ok=True)
 def restore(item):
  name,info=item
  if not re.fullmatch(r'[\w.-]+',name):raise ValueError('Invalid asset name')

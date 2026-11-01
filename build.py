@@ -33,7 +33,7 @@ document.open();document.write(deck);document.close();
 </script></body></html>'''
 offline=loader.replace('__DECK__',safe(payload)).replace('__MEDIA__',safe(media))
 (out/'Benghazi-Park-Presentation.html').write_text(offline)
-(site/'Benghazi-Park-Presentation.html').write_text(offline)
+(site/'Benghazi-Park-Presentation.html').unlink(missing_ok=True)
 shutil.make_archive(str(out/'Benghazi-Park-Netlify'),'zip',out,site.name)
 (root/'assets-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print(json.dumps({'site':str(site),'slides':html.count('<section class="slide '),'assets':len(names),'media_bytes':sum(v['bytes'] for v in manifest.values()),'offline_file':str(out/'Benghazi-Park-Presentation.html')},indent=2))

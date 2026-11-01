@@ -14,7 +14,7 @@ import re
 import sys
 import time
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, quote
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 from zipfile import ZipFile, ZIP_DEFLATED
 
@@ -108,12 +108,26 @@ def main():
         api('/user')
         if state.get('site_id'): site=api('/sites/'+state['site_id'])
         else:
-            site=api('/sites','POST',{'name':'benghazi-park-one-card'})
+            site=api('/sites','POST',{'name':'benghazi-park-one-card','sso_login':False})
             state={'site_id':site['id'],'url':public_url(site)}
             save_state(state)
-        deployment=api('/sites/'+state['site_id']+'/deploys?draft=false','POST',archive(found),'application/zip')
-        state['deploy_id']=deployment['id']
-        save_state(state)
+        manifest={'/'+name:hashlib.sha1(content).hexdigest() for name,content in found.items()}
+        fingerprint=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest()
+        resume=state.get('pending_files') and state.get('manifest_sha256')==fingerprint
+        if not resume:
+            deployment=api('/sites/'+state['site_id']+'/deploys?draft=false','POST',{'files':manifest})
+            required=set(deployment.get('required',[]))
+            if required-set(manifest.values()): raise RuntimeError('Netlify requested an unknown file hash.')
+            state['deploy_id']=deployment['id']
+            state['manifest_sha256']=fingerprint
+            state['upload_mode']='files'
+            state['pending_files']=[name for name,content in found.items() if hashlib.sha1(content).hexdigest() in required]
+            save_state(state)
+        print('Uploading '+str(len(state['pending_files']))+' changed files.',flush=True)
+        for name in sorted(state['pending_files'],key=lambda n:len(found[n])):
+            api('/deploys/'+state['deploy_id']+'/files/'+quote(name,safe='/'),'PUT',found[name],'application/octet-stream')
+            state['pending_files'].remove(name)
+            save_state(state)
         for _ in range(90):
             deployment=api('/deploys/'+state['deploy_id'])
             if deployment.get('state')=='ready': break
