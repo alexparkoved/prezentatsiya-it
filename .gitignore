@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+assets/
+dist/
+node_modules/
+*.zip
+*.mp4
+*.webm
+*.png
+*.jpg
+*.jpeg
+*.woff2
+.env
+.env.*
+site.json
