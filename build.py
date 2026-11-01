@@ -17,7 +17,6 @@ for n in names:shutil.copy2(a.assets/n,site/'assets'/n)
 for n,s in scripts.items():(site/n).write_text(s)
 (site/'_headers').write_text('/*\n  Cache-Control: public, max-age=0, must-revalidate\n  X-Content-Type-Options: nosniff\n')
 (site/'netlify.toml').write_text('[build]\n  publish = "."\n')
-shutil.make_archive(str(out/'Benghazi-Park-Netlify'),'zip',out,site.name)
 payload=html.replace('<link rel="stylesheet" href="presentation.css">','<style>'+css+'</style>')
 for n,s in scripts.items():payload=payload.replace('<script src="'+n+'"></script>','<script>'+s+'</script>')
 media={};manifest={}
@@ -32,6 +31,9 @@ let deck=__DECK__;const media=__MEDIA__;
 for(const [name,asset] of Object.entries(media)){const binary=atob(asset.base64),bytes=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);const url=URL.createObjectURL(new Blob([bytes],{type:asset.mime}));deck=deck.split('__PARK_ASSET_'+name+'__').join(url);}
 document.open();document.write(deck);document.close();
 </script></body></html>'''
-(out/'Benghazi-Park-Presentation.html').write_text(loader.replace('__DECK__',safe(payload)).replace('__MEDIA__',safe(media)))
+offline=loader.replace('__DECK__',safe(payload)).replace('__MEDIA__',safe(media))
+(out/'Benghazi-Park-Presentation.html').write_text(offline)
+(site/'Benghazi-Park-Presentation.html').write_text(offline)
+shutil.make_archive(str(out/'Benghazi-Park-Netlify'),'zip',out,site.name)
 (root/'assets-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 print(json.dumps({'site':str(site),'slides':html.count('<section class="slide '),'assets':len(names),'media_bytes':sum(v['bytes'] for v in manifest.values()),'offline_file':str(out/'Benghazi-Park-Presentation.html')},indent=2))

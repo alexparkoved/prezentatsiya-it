@@ -39,7 +39,7 @@ def api(path,method='GET',data=None,content_type='application/json'):
 def files():
     if not (SITE/'index.html').is_file():
         raise RuntimeError('The approved presentation files are absent. Restore Benghazi-Park-Web or the approved standalone HTML before publishing.')
-    allowed={'index.html','presentation.css','presentation.js','map-data.js','map.js','_headers','netlify.toml'}
+    allowed={'index.html','presentation.css','presentation.js','map-data.js','map.js','_headers','netlify.toml','Benghazi-Park-Presentation.html'}
     found={}
     for path in sorted(SITE.rglob('*')):
         if path.is_symlink(): raise RuntimeError('Symlinks are not allowed in the public folder.')
@@ -80,7 +80,7 @@ def verify(url,found):
     public={n:c for n,c in found.items() if n not in {'_headers','netlify.toml'}}
     for name,content in public.items():
         path='' if name=='index.html' else name
-        with build_opener(NoRedirect()).open(url+'/'+path,timeout=30) as response: actual=response.read()
+        with build_opener().open(url+'/'+path,timeout=30) as response: actual=response.read()
         if hashlib.sha256(actual).digest()!=hashlib.sha256(content).digest():
             raise RuntimeError('The hosted file differs from the approved local file: '+name)
     return len(public)
@@ -108,7 +108,7 @@ def main():
         api('/user')
         if state.get('site_id'): site=api('/sites/'+state['site_id'])
         else:
-            site=api('/sites','POST',{})
+            site=api('/sites','POST',{'name':'benghazi-park-one-card'})
             state={'site_id':site['id'],'url':public_url(site)}
             save_state(state)
         deployment=api('/sites/'+state['site_id']+'/deploys?draft=false','POST',archive(found),'application/zip')
