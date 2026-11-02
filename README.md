@@ -1,6 +1,6 @@
 # Benghazi Park — новое дыхание Бенгази
 
-FINAL local audience edition, 2026-11-02: eight slides, English by default and
+FINAL published audience edition, 2026-11-02: eight slides, English by default and
 Arabic through the single switch on the first slide. The complete deck switches
 language without changing geography or the approved two guest routes.
 
@@ -16,7 +16,11 @@ is 41–53; support-slide security is 4–16. VIP entrance remains distinct (17)
 
 The self-contained final HTML contains all 18 media assets and can download its
 own complete copy. Media recovery accepts this HTML via `restore_assets.py --offline`.
-The production Netlify site is unchanged. See docs/final-bilingual-2026-11-02.md.
+Published by the owner's explicit request at https://benghazi-park-one-card.netlify.app/,
+replacing the previous IT presentation. Deploy 6ae889fec0c14ebf409b3d06 contains the
+reviewed source b94366772454025eefed3af9edf8bad5440b17a0. All 29 served files match
+the local build by SHA256. Public desktop/phone viewing, the language switch and
+offline download were verified. See docs/netlify-publication-2026-11-02.md.
 
 ## Archived Russian working review
 

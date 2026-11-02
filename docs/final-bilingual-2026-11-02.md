@@ -38,5 +38,6 @@ houses; both guest routes complete together; pagination, footnotes and text fit
 checked. The Arabic dining legend fits without scrolling. The standalone HTML
 contains all media and supports downloading its own complete copy.
 
-Source saved to GitHub. This is a local final delivery; Netlify is not published
-automatically and the canonical production site remains unchanged.
+Source saved to GitHub. The owner subsequently explicitly requested publication
+on the existing Netlify site in place of the old IT presentation. That publication
+is complete; see netlify-publication-2026-11-02.md for the deploy and verification.

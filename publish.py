@@ -40,7 +40,7 @@ def api(path,method='GET',data=None,content_type='application/json'):
 def files():
     if not (SITE/'index.html').is_file():
         raise RuntimeError('The approved presentation files are absent. Restore Benghazi-Park-Web or the approved standalone HTML before publishing.')
-    allowed={'index.html','presentation.css','i18n.js','presentation.js','map-data.js','map.js','_headers','netlify.toml','Benghazi-Park-Presentation.html'}
+    allowed={'index.html','presentation.css','i18n.js','presentation.js','map-data.js','map.js','map-revision-data.js','map-editor.js','map-themes.js','park-content.js','park-story.js','_headers','netlify.toml','Benghazi-Park-Presentation.html'}
     found={}
     for path in sorted(SITE.rglob('*')):
         if path.is_symlink(): raise RuntimeError('Symlinks are not allowed in the public folder.')

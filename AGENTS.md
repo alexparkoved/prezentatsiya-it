@@ -1,5 +1,16 @@
 # Working on the Benghazi presentation
 
+## Published release — 2026-11-02
+
+The owner explicitly authorized replacing the old IT presentation with the final
+park presentation on the SAME Netlify site. Publication is complete at
+https://benghazi-park-one-card.netlify.app/ (deploy 6ae889fec0c14ebf409b3d06).
+deployment.json records the new deploy, source commit and previous deploy ID.
+All 29 served files were verified against the reviewed local build, along with
+public desktop/phone language switching and offline download. Keep this site and
+URL for corrections. Preserve the working checkout, external media and local server.
+Further publication should follow the owner's current request, never run at startup.
+
 ## FINAL OWNER CORRECTIONS — 2026-11-02 (take precedence over earlier review)
 
 The eight-slide park presentation is now English by default, with ONE English /
