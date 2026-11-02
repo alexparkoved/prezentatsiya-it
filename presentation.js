@@ -30,7 +30,7 @@
   event.preventDefault();const button=document.getElementById('download');if(button.dataset.busy)return;button.dataset.busy='true';button.textContent='…';
   try{
    async function textFile(name){const response=await fetch(name,{cache:'no-store'});if(!response.ok)throw new Error('Download unavailable');return response.text();}
-   const scriptNames=['i18n.js','map-data.js','map.js','presentation.js'];
+   const scriptNames=['i18n.js','map-data.js','map-revision-data.js','map.js','map-editor.js','presentation.js'];
    const [source,css,...codes]=await Promise.all(['index.html','presentation.css',...scriptNames].map(textFile));
    const endScript='<'+ '/script>';
    let payload=source.replace('<link rel="stylesheet" href="presentation.css">','<style>'+css+'</style>');

@@ -7,7 +7,7 @@ parser.add_argument('--out',type=Path,default=Path('/workspace/shared/benghazi-d
 a=parser.parse_args();root=Path(__file__).resolve().parent;out=a.out.resolve()
 if out==root or root in out.parents:raise SystemExit('Generated media must remain outside the checkout.')
 html=(root/'index.html').read_text();css=(root/'presentation.css').read_text()
-scripts={n:(root/n).read_text() for n in ['i18n.js','map-data.js','map.js','presentation.js']}
+scripts={n:(root/n).read_text() for n in ['i18n.js','map-data.js','map-revision-data.js','map.js','map-editor.js','presentation.js']}
 names=sorted(set(re.findall(r'assets/([\w.-]+)',html+css+''.join(scripts.values()))))
 missing=[n for n in names if not (a.assets/n).is_file()]
 if missing:raise SystemExit('Missing media: '+', '.join(missing))
