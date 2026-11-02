@@ -1,10 +1,10 @@
 window.MAP_REVISION={
-  "version": 3,
+  "version": 4,
   "sourceFrame": {
     "width": 1587,
     "height": 1123
   },
-  "placementStatus": "All 52 coordinates come unchanged from the latest owner JSON. Markers 12–16 identify existing terrain features, without additional building illustrations. Food points remain the v17 membership approved by the owner.",
+  "placementStatus": "The 52 owner coordinates are unchanged. A thirteenth security post shares the VIP entrance location, as requested by the owner. VIP entrance and security post retain separate numbers.",
   "points": [
     {
       "id": "truck-1",
@@ -748,11 +748,25 @@ window.MAP_REVISION={
         "منطقة ألعاب الأطفال «الساعة»"
       ],
       "status": "owner-layout-v3"
+    },
+    {
+      "id": "guard-13",
+      "group": "security",
+      "number": "13",
+      "x": 83.20266642051111,
+      "y": 24.791353343740354,
+      "labels": [
+        "Пост охраны у VIP-входа",
+        "Security post at the VIP entrance",
+        "نقطة حراسة عند مدخل كبار الزوار"
+      ],
+      "status": "owner-requested-vip-security",
+      "referenceId": "vip"
     }
   ],
-  "catalogVersion": 2,
+  "catalogVersion": 3,
   "foodPointRevision": "v17-only-2026-11-02",
-  "seedRevision": "v3-64f83b5605fa23fe",
+  "seedRevision": "v4-vip-security-2026-11-02",
   "ownerLayout": {
     "main": {
       "x": 68.39441812498946,
@@ -961,6 +975,10 @@ window.MAP_REVISION={
     "w2": {
       "x": 81,
       "y": 38
+    },
+    "guard-13": {
+      "x": 83.20266642051111,
+      "y": 24.791353343740354
     }
   },
   "ownerLayoutSha256": "64f83b5605fa23fe1cdd2e7937d2a464e52891f8c2302c48bebfc7b5726100f3",

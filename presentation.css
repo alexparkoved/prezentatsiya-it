@@ -269,4 +269,44 @@ html:lang(ar) .service-slide.with-routes .bottom-note{top:778px;font-size:13px;l
 .finale-promise{position:absolute;left:65px;top:674px;width:580px;font:800 23px/1.4 Rubik,Arial,sans-serif;color:#ffe4ac;z-index:5}
 .finale-rings{position:absolute;left:758px;top:168px;width:690px;height:690px;border:1px solid #e7c88240;border-radius:50%;z-index:1}
 .finale-rings:before,.finale-rings:after{content:'';position:absolute;inset:43px;border:1px solid #e7c88230;border-radius:50%}.finale-rings:after{inset:93px}
-body.park-story #future-toggle,body.park-story #language-toggle{display:none!important}
+body.park-story #future-toggle{display:none!important}
+/* Final audience edition: large characters, clear headlines and clean maps. */
+body.audience-edition .slide header{mix-blend-mode:multiply}
+body.audience-edition .slide header .brand{left:auto;right:0;top:-13px;width:185px;height:82px;transform:none;mix-blend-mode:multiply;filter:contrast(2);opacity:1}
+body.audience-edition .slide header .eyebrow{position:absolute;left:0;right:auto;top:0;width:1000px;max-width:1000px}
+body.audience-edition .park-intro header,body.audience-edition .park-finale header{mix-blend-mode:screen}
+body.audience-edition .park-intro header .brand,body.audience-edition .park-finale header .brand{filter:invert(1) grayscale(1) contrast(2);mix-blend-mode:screen;opacity:1}
+body.audience-edition .park-intro h1{left:65px;top:125px;width:440px;font-size:62px;line-height:1.04;letter-spacing:-2px}
+body.audience-edition .story-lead{left:65px;right:auto;top:281px;width:380px;font-size:18px;line-height:1.5}
+body.audience-edition .story-vision{left:65px;right:auto;top:373px;width:380px;font-size:16px;line-height:1.5}
+body.audience-edition .park-intro-art{left:430px;top:70px;width:800px;height:930px;mask-image:radial-gradient(ellipse 56% 62% at 50% 43%,#000 65%,transparent 97%)}
+body.audience-edition .story-halo{left:500px;top:190px;width:640px;height:640px}
+body.audience-edition .story-direction{width:385px;padding-left:32px}
+body.audience-edition .story-direction h3{font-size:27px;line-height:1.18;letter-spacing:-.6px;text-transform:uppercase;margin-bottom:10px}
+body.audience-edition .story-direction p{font-size:16px;line-height:1.5}
+body.audience-edition .direction-1{left:65px;top:474px}
+body.audience-edition .direction-2{left:1150px;top:334px}
+body.audience-edition .direction-3{left:65px;top:610px}
+body.audience-edition .direction-4{left:1150px;top:606px}
+body.audience-edition .direction-5{left:65px;top:746px}
+body.audience-edition .story-audience,body.audience-edition .story-park{display:none}
+body.audience-edition .map-editor-toolbar,body.audience-edition .map-editor-status,body.audience-edition .legend-nav{display:none!important}
+body.audience-edition .map-slide:not(.theme-map) .map-legend{top:218px;height:618px}
+body.audience-edition .legend-scroll{height:618px}
+body.audience-edition .map-pins [data-editor-id]{pointer-events:none;cursor:default}
+body.audience-edition [data-group=vip].number-only .revision-badge{left:calc(50% - 25px);top:29px}
+body.audience-edition .park-family-art{right:-30px;bottom:35px;width:1000px;height:860px}
+body.audience-edition .park-finale h1{max-width:610px;font-size:61px}
+body.audience-edition .park-finale .page-no{transform:translateY(13px)}
+body.audience-edition #language-toggle{font-size:12px;min-height:42px}
+html:lang(ar) body.audience-edition .park-intro h1{font-family:Cairo,Arial,sans-serif;font-size:60px;line-height:1.12;letter-spacing:0;text-align:right;top:120px;width:390px}
+html:lang(ar) body.audience-edition .direction-5{top:728px}
+html:lang(ar) body.audience-edition .story-lead,html:lang(ar) body.audience-edition .story-vision{font-family:Cairo,Arial,sans-serif;text-align:right;font-size:18px;line-height:1.65}
+html:lang(ar) body.audience-edition .story-direction{padding-left:0;padding-right:32px;text-align:right}
+html:lang(ar) body.audience-edition .story-number{left:auto;right:0}
+html:lang(ar) body.audience-edition .story-direction h3{font-family:Cairo,Arial,sans-serif;font-size:28px;line-height:1.45;letter-spacing:0}
+html:lang(ar) body.audience-edition .story-direction p{font-family:Cairo,Arial,sans-serif;font-size:18px;line-height:1.65}
+html:lang(ar) body.audience-edition .park-finale h1{font-family:Cairo,Arial,sans-serif;width:580px;font-size:60px;line-height:1.35;letter-spacing:0;text-align:right;top:190px}
+html:lang(ar) body.audience-edition .finale-lead{font-family:Cairo,Arial,sans-serif;width:560px;text-align:right;font-size:25px;line-height:1.7;top:476px}
+html:lang(ar) body.audience-edition .finale-promise{font-family:Cairo,Arial,sans-serif;width:560px;text-align:right;font-size:25px;line-height:1.5;top:705px}
+html:lang(ar) body.audience-edition .theme-food .theme-legend-list li{font-size:16px;line-height:1.4;min-height:28px;padding-bottom:3px}

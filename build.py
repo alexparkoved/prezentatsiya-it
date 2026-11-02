@@ -27,9 +27,10 @@ for n in names:
  manifest[n]={'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data)}
 def safe(v):return json.dumps(v,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
 loader='''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="only light"><title>Benghazi Park</title></head><body style="background:#fffdf8;color:#25231f;font:18px Arial"><p>Opening Benghazi Park…</p><script>
+const offlineHTML='<!doctype html>'+document.documentElement.outerHTML;
 let deck=__DECK__;const media=__MEDIA__;
 for(const [name,asset] of Object.entries(media)){const binary=atob(asset.base64),bytes=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);const url=URL.createObjectURL(new Blob([bytes],{type:asset.mime}));deck=deck.split('__PARK_ASSET_'+name+'__').join(url);}
-document.open();document.write(deck);document.close();
+document.open();document.write(deck);document.close();window.parkOfflineHTML=offlineHTML;
 </script></body></html>'''
 offline=loader.replace('__DECK__',safe(payload)).replace('__MEDIA__',safe(media))
 (out/'Benghazi-Park-Presentation.html').write_text(offline)

@@ -1,6 +1,31 @@
 # Working on the Benghazi presentation
 
-## CURRENT OWNER INSTRUCTIONS — 2026-11-02 (supersede historical scope below)
+## FINAL OWNER CORRECTIONS — 2026-11-02 (take precedence over earlier review)
+
+The eight-slide park presentation is now English by default, with ONE English /
+العربية switch on the opening slide. Translate the whole visible deck, including
+legends, captions, controls, footnotes and the management diagram. Keep geography
+and both guest routes unchanged when switching languages.
+
+The owner requested a much larger central girl, a two-line opening title and large
+uppercase English mission headings. The last two audience/park-benefit lines were
+explicitly REMOVED. The family finale is larger. All slide wordmarks are larger,
+right-aligned and blend into the slide background without a rectangular patch.
+
+The final audience presentation has NO editor toolbar, category filters, editing
+status or drawing-reference notes. Preserve the underlying data and editor source
+for future work, but do not show those tools in this audience edition.
+
+There are now 53 master markers: all original 52 owner coordinates are unchanged,
+plus guard-13 at the SAME coordinates as the VIP entrance. The VIP keeps number 17;
+the new green security post is 53. Master security range is 41–53, thirteen posts.
+On the support slide, the new post is local 16 and the range is 4–16. Keep its
+separate green house. This addition supersedes earlier twelve-post references.
+
+Keep the eight-slide order and both route animations. Do not publish to Netlify
+automatically. See docs/final-bilingual-2026-11-02.md for the final revision.
+
+## Earlier Russian review instructions — superseded where corrected above
 
 The IT deck is now a presentation of the WHOLE PARK, Russian review only.
 Exact runtime order: (1) girl, «Новое дыхание Бенгази» and five mission points;

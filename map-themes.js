@@ -6,7 +6,7 @@
   series:['НАПРАВЛЕНИЯ ПАРКА','PARK DIRECTIONS','مجالات الحديقة'],
   foodTitle:['Вкус парка','A taste of the park','مذاق الحديقة'],
   foodSub:['Питание в парке · ресторан, фуд-парк и 14 фудтраков','Park dining · a restaurant, food park and 14 food trucks','الطعام في الحديقة · مطعم ومنطقة مطاعم و14 عربة طعام'],
-  leisureTitle:['Энергия приключений','Time to explore','تجارب للمتعة'],
+  leisureTitle:['Энергия приключений','The energy of adventure','طاقة المغامرة'],
   leisureSub:['Развлечения','Entertainment','الترفيه'],
   supportTitle:['Команда за кадром','Behind the scenes','فريق خلف الكواليس'],
   supportSub:['Службы обеспечения · охрана, HR, инженерная служба и уборка','Park support · security, HR, engineering and cleaning','خدمات الدعم · الحراسة والموارد البشرية والهندسة والنظافة'],
@@ -14,7 +14,7 @@
   foodPark:['Фуд-парк','Food park','منطقة المطاعم'],
   foodRestaurant:['Главный ресторан','Main restaurant','المطعم الرئيسي'],
   security:['Посты охраны','Security posts','نقاط الحراسة'],
-  numbering:['Нумерация этого слайда','Numbers on this slide','ترقيم هذا السلايد'],
+  numbering:['Нумерация этого слайда','Numbers on this slide','ترقيم هذه الشريحة'],
   foodFooter:['ПИТАНИЕ В ПАРКЕ','PARK DINING','الطعام في الحديقة'],
   leisureFooter:['РАЗВЛЕЧЕНИЯ В ПАРКЕ','PARK ENTERTAINMENT','الترفيه في الحديقة'],
   supportFooter:['СЛУЖБЫ ОБЕСПЕЧЕНИЯ','PARK SUPPORT SERVICES','خدمات دعم الحديقة'],
@@ -25,7 +25,7 @@
  const defs=[
   {key:'food',part:1,title:'foodTitle',sub:'foodSub',footer:'foodFooter',ids:['restaurant','food',...Array.from({length:14},(_,i)=>'truck-'+(i+1))]},
   {key:'leisure',part:2,title:'leisureTitle',sub:'leisureSub',footer:'leisureFooter',ids:['rides','arcade','boats','karting','zoo','sports','amphitheatre','playground','w2']},
-  {key:'support',part:4,title:'supportTitle',sub:'supportSub',footer:'supportFooter',ids:['hr','engineering','cleaning',...Array.from({length:12},(_,i)=>'guard-'+(i+1))]}
+  {key:'support',part:4,title:'supportTitle',sub:'supportSub',footer:'supportFooter',ids:['hr','engineering','cleaning',...Array.from({length:13},(_,i)=>'guard-'+(i+1))]}
  ];
  function createMap(def){
   const section=master.cloneNode(true);section.classList.remove('active','editing-map');section.classList.add('theme-map','theme-'+def.key);section.dataset.theme=def.key;section.dataset.max='0';
@@ -76,7 +76,7 @@
    text(section,'.eyebrow',t('series')+' / 0'+def.part);text(section,'h2',t(def.title));text(section,'.theme-subtitle',t(def.sub));text(section,'.theme-legend-heading',t('numbering'));
    text(section,'footer>span:first-child',t(def.footer)+' · 0'+def.part+' / 04');text(section,'.translation-note',t('note'));
    list.replaceChildren();
-   def.ids.forEach((id,i)=>{const p=catalog.get(id);if(def.key==='support'&&p.group==='security'){if(id!=='guard-1')return;const row=document.createElement('li');row.className='theme-group-row';const num=document.createElement('span');num.className='catalog-number range-number';num.textContent='4–15';const name=document.createElement('span');name.textContent=t('security');row.append(num,name);list.append(row);return;}
+   def.ids.forEach((id,i)=>{const p=catalog.get(id);if(def.key==='support'&&p.group==='security'){if(id!=='guard-1')return;const row=document.createElement('li');row.className='theme-group-row';const num=document.createElement('span');num.className='catalog-number range-number';num.textContent='4–16';const name=document.createElement('span');name.textContent=t('security');row.append(num,name);list.append(row);return;}
     const row=document.createElement('li'),num=document.createElement('span'),name=document.createElement('span');row.dataset.themeLegendId=id;num.className='catalog-number';num.textContent=i+1;name.textContent=label(p);row.append(num,name);list.append(row);});
   });
   paymentCopy();serviceCopy();syncPositions();

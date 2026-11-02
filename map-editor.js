@@ -2,7 +2,7 @@
 /* Draft map overlay. Original source pixels and editable render coordinates stay separate. */
 (()=>{
  const slide=document.querySelector('.map-slide'),board=document.getElementById('main-map'),host=board.querySelector('.map-pins');
- const review=window.PARK_CONTENT?.language==='ru'||new URLSearchParams(location.search).get('map-review')==='ru',key='benghazi-map-revision-v1';
+ const presentationMode=window.PARK_CONTENT?.presentationMode===true,review=!presentationMode&&(window.PARK_CONTENT?.language==='ru'||new URLSearchParams(location.search).get('map-review')==='ru'),key='benghazi-map-revision-v1';
  const points=structuredClone(window.MAP_REVISION.points),base=window.PARK_MAP.places;
  let editing=false,selected=null,storageError=false;
  const words={
@@ -23,12 +23,12 @@
  [...host.querySelectorAll('.small')].forEach(el=>el.remove());
  originals.forEach(el=>{el.dataset.group='objects';const p=base.find(p=>p.id===el.dataset.id);el.dataset.editorId=p.id;});
  const all=[...base.map(p=>({id:p.id,group:'objects',x:p.x,y:p.y,labels:[names[p.n-1]?.[0]||'',window.parkI18n.t('legend.'+p.n),''],status:'existing-approved-render'})),...points];
- const order=['main','second','arcade','food','karting','boats','sports','restaurant','rides','zoo','playground','amphitheatre','engineering','hr','cleaning','w2','vip',...Array.from({length:14},(_,i)=>'truck-'+(i+1)),...Array.from({length:9},(_,i)=>'topup-'+(i+1)),...Array.from({length:12},(_,i)=>'guard-'+(i+1))];
+ const order=['main','second','arcade','food','karting','boats','sports','restaurant','rides','zoo','playground','amphitheatre','engineering','hr','cleaning','w2','vip',...Array.from({length:14},(_,i)=>'truck-'+(i+1)),...Array.from({length:9},(_,i)=>'topup-'+(i+1)),...Array.from({length:13},(_,i)=>'guard-'+(i+1))];
  const byId=new Map(all.map(p=>[p.id,p]));
  order.forEach((id,i)=>{const p=byId.get(id);p.displayNumber=i+1;Object.assign(p,window.MAP_REVISION.ownerLayout?.[id]||{});});
  const objectLabels={main:['Главный вход','Main entrance','المدخل الرئيسي'],second:['Второй вход','Second entrance','المدخل الثاني'],arcade:['Аркадный центр','Arcade centre','مركز ألعاب الأركيد'],food:['Фудкорт','Food court','ساحة الطعام'],karting:['Картинг','Karting','الكارتينغ'],boats:['Лодки','Boats','القوارب'],sports:['Спортивный комплекс','Sports complex','المجمع الرياضي'],restaurant:['Главный ресторан','Main restaurant','المطعم الرئيسي'],zoo:['Зоопарк','Zoo','حديقة الحيوانات'],playground:['Детская площадка','Playground','منطقة ألعاب الأطفال']};
  const labelFor=p=>p.id==='rides'?t('rides'):p.group==='topups'?t('topups'):p.group==='security'?t('security'):objectLabels[p.id]?.[lang()]||p.labels[lang()];
- const numberOnlyIds=new Set(['amphitheatre','engineering','hr','cleaning','w2']);
+ const numberOnlyIds=new Set(['amphitheatre','engineering','hr','cleaning','w2',...(presentationMode?['vip']:[])]);
  const nodes=new Map(originals.map(el=>[el.dataset.id,el]));
  points.forEach(p=>{const el=document.createElement('button');el.type='button';el.className='revision-pin';el.dataset.group=p.group;el.dataset.editorId=p.id;
   const model=document.createElement('span');model.className='revision-model';model.setAttribute('aria-hidden','true');
@@ -36,8 +36,8 @@
   else{model.innerHTML='<svg viewBox="0 0 60 60"><ellipse cx="31" cy="53" rx="24" ry="5" fill="#263d3425"/><path d="M12 24 36 15 49 23 26 33Z" fill="#e8d6b8"/><path d="M12 24 26 33 26 53 12 44Z" fill="#a9bca5"/><path d="M26 33 49 23 49 43 26 53Z" fill="#e2e4ca"/><path d="M9 23 34 11 53 22 27 35Z" fill="#315f53"/><path d="M9 23 27 35 27 39 9 27Z" fill="#23473e"/><path d="M27 35 53 22 53 27 27 39Z" fill="#427867"/><path d="M32 37 43 32 43 42 32 47Z" fill="#72a9a3"/><path d="M16 32 22 36 22 44 16 40Z" fill="#608985"/></svg>';}
   const badge=document.createElement('span');badge.className='revision-badge';badge.textContent=p.displayNumber;if(numberOnlyIds.has(p.id)){el.classList.add('number-only');el.append(badge);}else el.append(model,badge);host.append(el);nodes.set(p.id,el);});
  const translationNotes=[...document.querySelectorAll('.slide')].map(section=>{const note=document.createElement('p');note.className='translation-note';section.append(note);return note;});
- const bar=document.createElement('div');bar.className='map-editor-toolbar';bar.dataset.mapEditor='true';slide.append(bar);
- const title=slide.querySelector('h2'),legend=slide.querySelector('.map-legend'),status=document.createElement('p');status.className='map-editor-status';slide.append(status);
+ const bar=document.createElement('div');bar.className='map-editor-toolbar';bar.dataset.mapEditor='true';if(!presentationMode)slide.append(bar);
+ const title=slide.querySelector('h2'),legend=slide.querySelector('.map-legend'),status=document.createElement('p');status.className='map-editor-status';if(!presentationMode)slide.append(status);
  const buttons={};['edit','save','copy','export','import'].forEach(action=>{const b=document.createElement('button');b.type='button';bar.append(b);buttons[action]=b;});
  const input=document.createElement('input');input.type='file';input.accept='application/json,.json';input.hidden=true;bar.append(input);
  const filters=document.createElement('div');filters.className='map-group-filters';bar.append(filters);
@@ -45,7 +45,7 @@
  const filterLabels=[];
  enabled.forEach(group=>{const label=document.createElement('label'),check=document.createElement('input'),text=document.createElement('span');check.type='checkbox';check.checked=true;label.append(check,text);filters.append(label);filterLabels.push([text,group]);check.onchange=()=>{check.checked?enabled.add(group):enabled.delete(group);draw();};});
  const notice=msg=>status.textContent=msg;
- function serialize(){return {schema:'benghazi-map-layout',version:2,catalogVersion:2,seedRevision:window.MAP_REVISION.seedRevision,sourceFrame:window.MAP_REVISION.sourceFrame,coordinateFrame:'percent-of-main-map-board',placementStatus:'draft-owner-review',points:all.map(({id,group,x,y,status,source,sourceNumber,displayNumber})=>({id,group,x,y,status,source,sourceNumber,displayNumber}))};}
+ function serialize(){return {schema:'benghazi-map-layout',version:2,catalogVersion:3,seedRevision:window.MAP_REVISION.seedRevision,sourceFrame:window.MAP_REVISION.sourceFrame,coordinateFrame:'percent-of-main-map-board',placementStatus:'draft-owner-review',points:all.map(({id,group,x,y,status,source,sourceNumber,displayNumber})=>({id,group,x,y,status,source,sourceNumber,displayNumber}))};}
  function apply(data){
   if(data?.schema!=='benghazi-map-layout'||![1,2].includes(data.version)||data.points?.length!==all.length)throw Error('Invalid layout');
   const ids=new Set();data.points.forEach(p=>{if(!nodes.has(p.id)||ids.has(p.id)||!Number.isFinite(p.x)||!Number.isFinite(p.y)||p.x<0||p.x>100||p.y<0||p.y>100)throw Error('Invalid point');ids.add(p.id);});
@@ -78,17 +78,17 @@
   if(review){slide.setAttribute('dir','ltr');slide.querySelector('.eyebrow').textContent='БЕНГАЗИ / КАРТА ПАРКА';}
   title.textContent=t('title');Object.keys(buttons).forEach(k=>buttons[k].textContent=t(k));filterLabels.forEach(([el,k])=>el.textContent=t(k));
   const noteText=['* Возможны неточности в переводе.','* Translation may contain inaccuracies.','* قد توجد أخطاء في الترجمة.'][lang()];translationNotes.forEach(note=>note.textContent=noteText);
-  legend.replaceChildren();const nav=document.createElement('nav');nav.className='legend-nav';legend.append(nav);const scroll=document.createElement('div');scroll.className='legend-scroll';scroll.tabIndex=0;legend.append(scroll);
-  const groups=[['objects',1,17],['trucks',18,31],['topups',32,40],['security',41,52]];
-  groups.forEach(([group,start,end])=>{const heading=document.createElement('h3');heading.id='map-catalog-'+group;heading.textContent=start+'–'+end+' · '+t(group);scroll.append(heading);const jump=document.createElement('button');jump.type='button';jump.textContent=start+'–'+end;jump.title=t(group);jump.onclick=()=>{scroll.scrollTop+=heading.getBoundingClientRect().top-scroll.getBoundingClientRect().top;};nav.append(jump);
+  legend.replaceChildren();const nav=document.createElement('nav');nav.className='legend-nav';if(!presentationMode)legend.append(nav);const scroll=document.createElement('div');scroll.className='legend-scroll';scroll.tabIndex=0;legend.append(scroll);
+  const groups=[['objects',1,17],['trucks',18,31],['topups',32,40],['security',41,53]];
+  groups.forEach(([group,start,end])=>{const heading=document.createElement('h3');heading.id='map-catalog-'+group;const range=document.createElement('bdi');range.dir='ltr';range.textContent=start+'–'+end;heading.append(range,document.createTextNode(' · '+t(group)));scroll.append(heading);const jump=document.createElement('button');jump.type='button';jump.textContent=start+'–'+end;jump.title=t(group);jump.onclick=()=>{scroll.scrollTop+=heading.getBoundingClientRect().top-scroll.getBoundingClientRect().top;};nav.append(jump);
    if(group==='topups'||group==='security'){heading.dataset.catalogRange=start+'-'+end;return;}
    const list=document.createElement('ol');list.start=start;scroll.append(list);
-   order.slice(start-1,end).forEach(id=>{const p=byId.get(id),li=document.createElement('li'),number=document.createElement('button'),text=document.createElement('div'),name=document.createElement('span');li.dataset.catalogId=id;li.dataset.group=p.group;number.type='button';number.className='catalog-number';number.textContent=p.displayNumber;number.setAttribute('aria-label',p.displayNumber+'. '+labelFor(p));number.onclick=()=>{selected=id;draw();};name.textContent=labelFor(p);text.append(name);
-    if(p.sourceNumber){const note=document.createElement('small');note.textContent=["На схеме: ","Drawing: ","في المخطط: "][lang()]+p.sourceNumber+(review&&p.group==='trucks'?' · '+p.labels[1].replace('Food truck: ',''):'');text.append(note);}li.append(number,text);list.append(li);});
+   order.slice(start-1,end).forEach(id=>{const p=byId.get(id),li=document.createElement('li'),number=document.createElement(presentationMode?'span':'button'),text=document.createElement('div'),name=document.createElement('span');li.dataset.catalogId=id;li.dataset.group=p.group;number.type='button';number.className='catalog-number';number.textContent=p.displayNumber;number.setAttribute('aria-label',p.displayNumber+'. '+labelFor(p));if(!presentationMode)number.onclick=()=>{selected=id;draw();};name.textContent=labelFor(p);text.append(name);
+    if(p.sourceNumber&&!presentationMode){const note=document.createElement('small');note.textContent=["На схеме: ","Drawing: ","في المخطط: "][lang()]+p.sourceNumber+(review&&p.group==='trucks'?' · '+p.labels[1].replace('Food truck: ',''):'');text.append(note);}li.append(number,text);list.append(li);});
   });
   notice(storageError?t('failed'):t('draft'));draw();
  }
  document.addEventListener('parklanguagechange',localize);localize();
  ['click','pointerdown','pointerup','keydown','wheel'].forEach(type=>legend.addEventListener(type,e=>e.stopPropagation()));
- window.parkMapEditor={serialize,getCatalog:()=>all.map(p=>({...structuredClone(p),label:labelFor(p)})),getLanguage:()=>review?'ru':window.parkI18n.getLanguage(),setEditing:value=>{editing=!!value;draw();},getState:()=>({editing,selected,counts:Object.fromEntries([...enabled].map(g=>[g,all.filter(p=>p.group===g).length]))})};
+ window.parkMapEditor={serialize,getCatalog:()=>all.map(p=>({...structuredClone(p),label:labelFor(p)})),getLanguage:()=>review?'ru':window.parkI18n.getLanguage(),setEditing:value=>{editing=!presentationMode&&!!value;draw();},getState:()=>({editing,selected,counts:Object.fromEntries([...enabled].map(g=>[g,all.filter(p=>p.group===g).length]))})};
 })();

@@ -1,5 +1,25 @@
 # Benghazi Park — новое дыхание Бенгази
 
+FINAL local audience edition, 2026-11-02: eight slides, English by default and
+Arabic through the single switch on the first slide. The complete deck switches
+language without changing geography or the approved two guest routes.
+
+The opening girl is larger and central, the title has two lines, and the five
+mission headings are enlarged. The two bottom audience/park-benefit sentences
+were removed at the owner's request. The finale's two parents and five children
+are larger. Wordmarks sit at the upper right, without rectangular backgrounds.
+
+All editor controls, category checkboxes and status messages are absent from the
+audience edition. There are 53 master markers: the previous 52 positions remain
+exact, and the new thirteenth guard post is at the VIP entrance. Master security
+is 41–53; support-slide security is 4–16. VIP entrance remains distinct (17).
+
+The self-contained final HTML contains all 18 media assets and can download its
+own complete copy. Media recovery accepts this HTML via `restore_assets.py --offline`.
+The production Netlify site is unchanged. See docs/final-bilingual-2026-11-02.md.
+
+## Archived Russian working review
+
 CURRENT local Russian review, 2026-11-02: an eight-slide presentation of the whole
 park. The first slide now combines the familiar girl, title and FIVE mission
 directions: emotions/happiness, movement/energy, calm/recovery, discoveries/history

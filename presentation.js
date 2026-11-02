@@ -26,6 +26,7 @@
  stage.addEventListener('pointercancel',()=>touch=null);
  document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||e.target.closest('input,textarea,select'))return;const k=e.key.toLowerCase();if(k===' '&&e.target.closest('button'))return;if(['arrowright',' ','pagedown'].includes(k)){e.preventDefault();stop();next();}else if(['arrowleft','pageup'].includes(k)){e.preventDefault();stop();prev();}else if(k==='r')replay();else if(k==='p')play();else if(k==='f')fullscreen();else if(k==='h'){document.body.classList.toggle('clean');fit();}else if(k==='home')goto(0);else if(k==='end')goto(slides.length-1,99);});
  async function downloadPresentation(event){
+  if(window.parkOfflineHTML){event.preventDefault();const url=URL.createObjectURL(new Blob([window.parkOfflineHTML],{type:'text/html'})),link=document.createElement('a');link.href=url;link.download='Benghazi-Park-Final-EN-AR.html';link.click();setTimeout(()=>URL.revokeObjectURL(url),60000);return;}
   if(location.protocol==='file:')return;
   event.preventDefault();const button=document.getElementById('download');if(button.dataset.busy)return;button.dataset.busy='true';button.textContent='…';
   try{
