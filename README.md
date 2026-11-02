@@ -2,6 +2,15 @@
 
 Public presentation: https://benghazi-park-one-card.netlify.app/
 
+Local working review (2026-11-02) now contains twelve slides: four requested topic
+views follow the main map, with the original eight slides retained. map-themes.js
+duplicates the approved map at exactly the same coordinates and adds dining,
+entertainment, a copy of the payment/system diagram, and park-support views.
+Numbers restart within each topic. Main-map edits update the topic maps in the
+same viewing session. The production URL above still refers to the published deck;
+these new views have not been published. Use `?map-review=ru#4` for Russian topic
+review; `#4` through `#7` open the four new slides directly.
+
 Eight-slide animated English/Arabic presentation for Benghazi Park, including the approved penultimate slide “The risks of delay”. One small English / العربية switch appears at the bottom right of the first slide only. The chosen language applies to all eight slides, map legends, route captions, controls and accessibility labels. Switching preserves the current reveal. A fresh viewing session starts in English; `?lang=ar` opens directly in Arabic.
 
 The future-options telephone slide can be excluded, leaving seven slides. Page numbering updates automatically: risk is 07/08 and closing 08/08 by default, or 06/07 and 07/07 when Future is off. The final outcome remains last in both modes.

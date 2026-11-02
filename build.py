@@ -7,7 +7,7 @@ parser.add_argument('--out',type=Path,default=Path('/workspace/shared/benghazi-d
 a=parser.parse_args();root=Path(__file__).resolve().parent;out=a.out.resolve()
 if out==root or root in out.parents:raise SystemExit('Generated media must remain outside the checkout.')
 html=(root/'index.html').read_text();css=(root/'presentation.css').read_text()
-scripts={n:(root/n).read_text() for n in ['i18n.js','map-data.js','map-revision-data.js','map.js','map-editor.js','presentation.js']}
+scripts={n:(root/n).read_text() for n in ['i18n.js','map-data.js','map-revision-data.js','map.js','map-editor.js','map-themes.js','presentation.js']}
 names=sorted(set(re.findall(r'assets/([\w.-]+)',html+css+''.join(scripts.values()))))
 missing=[n for n in names if not (a.assets/n).is_file()]
 if missing:raise SystemExit('Missing media: '+', '.join(missing))
@@ -36,4 +36,6 @@ offline=loader.replace('__DECK__',safe(payload)).replace('__MEDIA__',safe(media)
 (site/'Benghazi-Park-Presentation.html').unlink(missing_ok=True)
 shutil.make_archive(str(out/'Benghazi-Park-Netlify'),'zip',out,site.name)
 (root/'assets-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
-print(json.dumps({'site':str(site),'slides':html.count('<section class="slide '),'assets':len(names),'media_bytes':sum(v['bytes'] for v in manifest.values()),'offline_file':str(out/'Benghazi-Park-Presentation.html')},indent=2))
+base_slides=html.count('<section class="slide ')
+theme_slides=4 if '<script src="map-themes.js"></script>' in html else 0
+print(json.dumps({'site':str(site),'slides':base_slides+theme_slides,'base_templates':base_slides,'theme_views':theme_slides,'assets':len(names),'media_bytes':sum(v['bytes'] for v in manifest.values()),'offline_file':str(out/'Benghazi-Park-Presentation.html')},indent=2))

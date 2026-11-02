@@ -206,3 +206,23 @@ html:lang(ar) .map-slide .legend-scroll li{font:600 16px/1.4 Cairo,Arial,sans-se
 .translation-note{position:absolute;left:65px;bottom:15px;max-width:445px;margin:0;color:#8e8374;font:400 8px/1.25 Manrope,Arial,sans-serif;z-index:16;pointer-events:none}
 .cover .translation-note,.closing .translation-note{color:#e5d9c3b3}
 html:lang(ar) .translation-note{font-family:Cairo,Arial,sans-serif;direction:rtl;text-align:left}
+/* Themed maps retain the master's board rectangle and terrain, with local numbers. */
+.theme-subtitle{position:absolute;left:65px;top:184px;right:65px;font-size:17px;line-height:1.5;color:#8e7d65;font-weight:600}
+.theme-map .map-legend{height:590px;overflow-y:auto;overscroll-behavior:contain;padding-right:10px;scrollbar-gutter:stable;touch-action:pan-y}
+.theme-map .theme-legend-heading{margin:0 0 16px;font-size:11px;font-weight:800;letter-spacing:1px;color:#9c8c75}
+.theme-map .theme-legend-list li{display:flex;align-items:flex-start;gap:10px;min-height:31px;font-size:15px;line-height:1.35;padding-bottom:5px}
+.theme-map .catalog-number{display:grid;place-items:center;height:25px;line-height:25px}
+.theme-map .range-number{border-radius:12px;min-width:44px;font-size:11px}
+.theme-map .map-pins{pointer-events:none}.theme-map .revision-pin{pointer-events:none}
+.theme-group-row{margin-top:14px}
+.theme-payment-slide>h2{font-size:56px;max-width:1000px}
+.theme-payment-slide.review-ru .system-hub h3{font-size:31px;line-height:1.1}
+.theme-payment-slide.review-ru .system-node h3{font-size:23px;line-height:1.12}
+.theme-payment-slide.review-ru .system-node p{font-size:10px}
+.theme-payment-slide.review-ru .controller-node h3{font-size:21px}
+.theme-payment-slide.review-ru .system-carriers-caption{font-size:6.5px;letter-spacing:.6px}
+.payment-local-number{position:absolute;left:149px;top:0;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#fffdf8;border:1px solid #e4c4aa;color:#b76437;font:800 12px Arial;z-index:9}
+.controller-node .payment-local-number{left:9px;top:8px}.carrier-local-number{left:944px;top:754px}
+html:lang(ar) .theme-subtitle{font-family:Cairo,Arial,sans-serif;font-size:20px;text-align:right}
+html:lang(ar) .theme-map .theme-legend-list li{font-family:Cairo,Arial,sans-serif;font-size:18px;line-height:1.45;direction:rtl;text-align:right}
+html:lang(ar) .theme-map .theme-legend-heading{font-family:Cairo,Arial,sans-serif;font-size:14px}

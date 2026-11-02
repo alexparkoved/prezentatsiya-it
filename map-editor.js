@@ -57,6 +57,7 @@
    const label=p.displayNumber+'. '+labelFor(p);el.title=label;el.setAttribute('aria-label',label);el.dataset.mapNumber=p.displayNumber;el.querySelector('.revision-badge,.map-number').textContent=p.displayNumber;
   });
   slide.classList.toggle('editing-map',editing);buttons.edit.textContent=t(editing?'done':'edit');buttons.edit.setAttribute('aria-pressed',String(editing));
+  document.dispatchEvent(new CustomEvent('parkmapchange'));
  }
  function copy(){return JSON.stringify(serialize(),null,2);}
  function save(){try{localStorage.setItem(key,copy());notice(t('saved'));return true;}catch{notice(t('failed'));return false;}}
@@ -89,5 +90,5 @@
  }
  document.addEventListener('parklanguagechange',localize);localize();
  ['click','pointerdown','pointerup','keydown','wheel'].forEach(type=>legend.addEventListener(type,e=>e.stopPropagation()));
- window.parkMapEditor={serialize,setEditing:value=>{editing=!!value;draw();},getState:()=>({editing,selected,counts:Object.fromEntries([...enabled].map(g=>[g,all.filter(p=>p.group===g).length]))})};
+ window.parkMapEditor={serialize,getCatalog:()=>all.map(p=>({...structuredClone(p),label:labelFor(p)})),getLanguage:()=>review?'ru':window.parkI18n.getLanguage(),setEditing:value=>{editing=!!value;draw();},getState:()=>({editing,selected,counts:Object.fromEntries([...enabled].map(g=>[g,all.filter(p=>p.group===g).length]))})};
 })();
