@@ -1,10 +1,10 @@
 window.MAP_REVISION={
-  "version": 2,
+  "version": 3,
   "sourceFrame": {
     "width": 1587,
     "height": 1123
   },
-  "placementStatus": "Food truck and top-up membership/numbering follows only the owner-supplied v17 drawing. Other objects use the owner layout when available. Render placements remain landmark-aligned, editable draft coordinates.",
+  "placementStatus": "All 52 coordinates come unchanged from the latest owner JSON. Markers 12–16 identify existing terrain features, without additional building illustrations. Food points remain the v17 membership approved by the owner.",
   "points": [
     {
       "id": "truck-1",
@@ -21,7 +21,7 @@ window.MAP_REVISION={
         "Food truck: Sfinz",
         "عربة طعام: سفنز"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 1,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -40,7 +40,7 @@ window.MAP_REVISION={
         "Food truck: Mubattan",
         "عربة طعام: مبطن"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 2,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -59,7 +59,7 @@ window.MAP_REVISION={
         "Food truck: Pizza",
         "عربة طعام: بيتزا"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 3,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -78,7 +78,7 @@ window.MAP_REVISION={
         "Food truck: Loaded Fries",
         "عربة طعام: بطاطس مقلية بإضافات"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 4,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -97,7 +97,7 @@ window.MAP_REVISION={
         "Food truck: Bakbaka",
         "عربة طعام: مبكبكة"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 5,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -116,7 +116,7 @@ window.MAP_REVISION={
         "Food truck: Burger",
         "عربة طعام: برغر"
       ],
-      "status": "owner-adjusted-v17-point",
+      "status": "owner-layout-v3",
       "sourceNumber": 6,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -128,14 +128,14 @@ window.MAP_REVISION={
         690,
         479
       ],
-      "x": 47.4,
-      "y": 39.7,
+      "x": 47.96917517044783,
+      "y": 40.5443806990157,
       "labels": [
         "Фудтрак: Хот-доги",
         "Food truck: Footlong Hot Dogs",
         "عربة طعام: هوت دوغ"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 7,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -154,7 +154,7 @@ window.MAP_REVISION={
         "Food truck: Libyan Sweets",
         "عربة طعام: حلويات ليبية"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 8,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -173,7 +173,7 @@ window.MAP_REVISION={
         "Food truck: Libyan Couscous",
         "عربة طعام: كسكسي ليبي"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 9,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -192,7 +192,7 @@ window.MAP_REVISION={
         "Food truck: Loaded Chips",
         "عربة طعام: رقائق بطاطس بإضافات"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 10,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -211,7 +211,7 @@ window.MAP_REVISION={
         "Food truck: Shawarma",
         "عربة طعام: شاورما"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 11,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -230,7 +230,7 @@ window.MAP_REVISION={
         "Food truck: Pan Crepes",
         "عربة طعام: فطائر"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 12,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -249,7 +249,7 @@ window.MAP_REVISION={
         "Food truck: Saj",
         "عربة طعام: صاج"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 13,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -268,7 +268,7 @@ window.MAP_REVISION={
         "Food truck: Chicken",
         "عربة طعام: دجاج"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 14,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -287,7 +287,7 @@ window.MAP_REVISION={
         "Arcade centre B1",
         "مركز الألعاب B1"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 1,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -306,7 +306,7 @@ window.MAP_REVISION={
         "Attraction square E2",
         "ساحة الملاهي E2"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 2,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -325,7 +325,7 @@ window.MAP_REVISION={
         "D4 by lake L2",
         "D4 بجوار بحيرة L2"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 3,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -344,7 +344,7 @@ window.MAP_REVISION={
         "L1 corner by toilets",
         "زاوية L1 بجوار دورات المياه"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 4,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -363,7 +363,7 @@ window.MAP_REVISION={
         "Upper end of T2 kiosks",
         "الطرف العلوي لأكشاك T2"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 5,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -382,7 +382,7 @@ window.MAP_REVISION={
         "Main restaurant L3",
         "المطعم الرئيسي L3"
       ],
-      "status": "owner-adjusted-v17-point",
+      "status": "owner-layout-v3",
       "sourceNumber": 6,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -401,7 +401,7 @@ window.MAP_REVISION={
         "Karting cashier",
         "شباك الكارتينغ"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 7,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -420,7 +420,7 @@ window.MAP_REVISION={
         "Zoo square Z2",
         "ساحة حديقة الحيوانات Z2"
       ],
-      "status": "v17-landmark-aligned-draft",
+      "status": "owner-layout-v3",
       "sourceNumber": 8,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -439,7 +439,7 @@ window.MAP_REVISION={
         "Boats U1 by food truck 13",
         "القوارب U1 بجوار عربة الطعام 13"
       ],
-      "status": "owner-adjusted-v17-point",
+      "status": "owner-layout-v3",
       "sourceNumber": 9,
       "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
@@ -458,7 +458,7 @@ window.MAP_REVISION={
         "Security post 1",
         "نقطة حراسة 1"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "guard-2",
@@ -475,7 +475,7 @@ window.MAP_REVISION={
         "Security post 2",
         "نقطة حراسة 2"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "guard-3",
@@ -492,7 +492,7 @@ window.MAP_REVISION={
         "Security post 3",
         "نقطة حراسة 3"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "guard-4",
@@ -509,7 +509,7 @@ window.MAP_REVISION={
         "Security post 4",
         "نقطة حراسة 4"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "guard-5",
@@ -526,7 +526,7 @@ window.MAP_REVISION={
         "Security post 5",
         "نقطة حراسة 5"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "guard-6",
@@ -543,7 +543,7 @@ window.MAP_REVISION={
         "Security post 6",
         "نقطة حراسة 6"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "guard-7",
@@ -560,7 +560,7 @@ window.MAP_REVISION={
         "Security post 7",
         "نقطة حراسة 7"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "guard-8",
@@ -577,7 +577,7 @@ window.MAP_REVISION={
         "Security post 8",
         "نقطة حراسة 8"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "guard-9",
@@ -594,7 +594,7 @@ window.MAP_REVISION={
         "Security post 9",
         "نقطة حراسة 9"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "guard-10",
@@ -611,7 +611,7 @@ window.MAP_REVISION={
         "Security post 10",
         "نقطة حراسة 10"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "guard-11",
@@ -628,7 +628,7 @@ window.MAP_REVISION={
         "Security post 11",
         "نقطة حراسة 11"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "guard-12",
@@ -645,7 +645,7 @@ window.MAP_REVISION={
         "Security post 12",
         "نقطة حراسة 12"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "vip",
@@ -655,14 +655,14 @@ window.MAP_REVISION={
         1240,
         306
       ],
-      "x": 88,
-      "y": 28,
+      "x": 83.20266642051111,
+      "y": 24.791353343740354,
       "labels": [
-        "VIP",
-        "VIP",
-        "VIP"
+        "VIP-вход",
+        "VIP entrance",
+        "مدخل كبار الزوار"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "amphitheatre",
@@ -672,14 +672,14 @@ window.MAP_REVISION={
         660,
         395
       ],
-      "x": 47.42354835219699,
-      "y": 31.688761398031392,
+      "x": 44.17111880678079,
+      "y": 25.271468085512097,
       "labels": [
         "Амфитеатр",
         "Amphitheatre",
         "المسرح المكشوف"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "engineering",
@@ -689,14 +689,14 @@ window.MAP_REVISION={
         419,
         665
       ],
-      "x": 24,
-      "y": 58,
+      "x": 17.007276477355177,
+      "y": 51.75158282728385,
       "labels": [
         "Инженерный блок",
         "Engineering block",
         "المبنى الهندسي"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "hr",
@@ -706,14 +706,14 @@ window.MAP_REVISION={
         250,
         620
       ],
-      "x": 9,
-      "y": 47,
+      "x": 11.927186590874577,
+      "y": 44.97348632236233,
       "labels": [
-        "HR",
-        "HR",
-        "الموارد البشرية"
+        "HR-офис",
+        "HR office",
+        "مكتب الموارد البشرية"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "cleaning",
@@ -723,14 +723,14 @@ window.MAP_REVISION={
         388,
         740
       ],
-      "x": 23,
-      "y": 67,
+      "x": 16.088587215990582,
+      "y": 57.03630775161478,
       "labels": [
-        "Офис клининга",
-        "Cleaning office",
-        "مكتب النظافة"
+        "Служба уборки",
+        "Cleaning services",
+        "خدمات النظافة"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     },
     {
       "id": "w2",
@@ -743,16 +743,16 @@ window.MAP_REVISION={
       "x": 81,
       "y": 38,
       "labels": [
-        "Площадка",
-        "Activity area",
-        "الساحة"
+        "Детская площадка «Часы»",
+        "Clock playground",
+        "منطقة ألعاب الأطفال «الساعة»"
       ],
-      "status": "owner-position"
+      "status": "owner-layout-v3"
     }
   ],
   "catalogVersion": 2,
   "foodPointRevision": "v17-only-2026-11-02",
-  "seedRevision": "v2-8b36ae007dfdde81",
+  "seedRevision": "v3-64f83b5605fa23fe",
   "ownerLayout": {
     "main": {
       "x": 68.39441812498946,
@@ -767,8 +767,8 @@ window.MAP_REVISION={
       "y": 13.5
     },
     "rides": {
-      "x": 50,
-      "y": 31.3
+      "x": 47.88592079547947,
+      "y": 29.44236246216547
     },
     "food": {
       "x": 60.92621477270809,
@@ -797,6 +797,98 @@ window.MAP_REVISION={
     "playground": {
       "x": 63,
       "y": 40.5
+    },
+    "truck-1": {
+      "x": 62.9,
+      "y": 18.7
+    },
+    "truck-2": {
+      "x": 50.3,
+      "y": 21.8
+    },
+    "truck-3": {
+      "x": 54.2,
+      "y": 32.5
+    },
+    "truck-4": {
+      "x": 60.2,
+      "y": 35.1
+    },
+    "truck-5": {
+      "x": 55.2,
+      "y": 40.6
+    },
+    "truck-6": {
+      "x": 42.430824829552165,
+      "y": 37.83112386019686
+    },
+    "truck-7": {
+      "x": 47.96917517044783,
+      "y": 40.5443806990157
+    },
+    "truck-8": {
+      "x": 52.1,
+      "y": 55.2
+    },
+    "truck-9": {
+      "x": 45.6,
+      "y": 64
+    },
+    "truck-10": {
+      "x": 68.8,
+      "y": 60.5
+    },
+    "truck-11": {
+      "x": 20.2,
+      "y": 67.8
+    },
+    "truck-12": {
+      "x": 32,
+      "y": 73.6
+    },
+    "truck-13": {
+      "x": 52.8,
+      "y": 74
+    },
+    "truck-14": {
+      "x": 84.5,
+      "y": 46.8
+    },
+    "topup-1": {
+      "x": 55,
+      "y": 12.5
+    },
+    "topup-2": {
+      "x": 45,
+      "y": 35
+    },
+    "topup-3": {
+      "x": 60.2,
+      "y": 26.9
+    },
+    "topup-4": {
+      "x": 50.8,
+      "y": 41.4
+    },
+    "topup-5": {
+      "x": 58.6,
+      "y": 48.9
+    },
+    "topup-6": {
+      "x": 70.22329931820866,
+      "y": 30.460229483543493
+    },
+    "topup-7": {
+      "x": 78.8,
+      "y": 60.8
+    },
+    "topup-8": {
+      "x": 32.9,
+      "y": 71
+    },
+    "topup-9": {
+      "x": 58.544904034072694,
+      "y": 69.46685790295291
     },
     "guard-1": {
       "x": 59,
@@ -847,34 +939,35 @@ window.MAP_REVISION={
       "y": 97.85763753783453
     },
     "vip": {
-      "x": 88,
-      "y": 28
+      "x": 83.20266642051111,
+      "y": 24.791353343740354
     },
     "amphitheatre": {
-      "x": 47.42354835219699,
-      "y": 31.688761398031392
+      "x": 44.17111880678079,
+      "y": 25.271468085512097
     },
     "engineering": {
-      "x": 24,
-      "y": 58
+      "x": 17.007276477355177,
+      "y": 51.75158282728385
     },
     "hr": {
-      "x": 9,
-      "y": 47
+      "x": 11.927186590874577,
+      "y": 44.97348632236233
     },
     "cleaning": {
-      "x": 23,
-      "y": 67
+      "x": 16.088587215990582,
+      "y": 57.03630775161478
     },
     "w2": {
       "x": 81,
       "y": 38
     }
   },
-  "ownerLayoutSha256": "8b36ae007dfdde81a3581efaaee877dfacee571fa1a3a762cacf606382832435",
+  "ownerLayoutSha256": "64f83b5605fa23fe1cdd2e7937d2a464e52891f8c2302c48bebfc7b5726100f3",
   "ownerAdjustedFoodPoints": [
     "topup-6",
     "topup-9",
     "truck-6"
-  ]
+  ],
+  "ownerLayoutFile": "benghazi-map-layout (1)2.json"
 };

@@ -202,3 +202,7 @@ html:lang(ar) .map-slide .map-legend li{font-size:16px;line-height:1.5;min-heigh
 [data-group=topups]>.revision-badge{border-radius:6px}
 html:lang(ar) .map-slide .legend-scroll li{font:600 16px/1.4 Cairo,Arial,sans-serif;min-height:28px}html:lang(ar) .map-slide .legend-scroll h3{font:800 15px/1.4 Cairo,Arial,sans-serif}html:lang(ar) .map-slide .legend-scroll small{font:400 11px Cairo,Arial,sans-serif}
 .map-editor-status{left:350px;right:65px;top:224px;bottom:auto;font-size:11px}
+.number-only .revision-badge{pointer-events:auto;cursor:inherit}
+.translation-note{position:absolute;left:65px;bottom:15px;max-width:445px;margin:0;color:#8e8374;font:400 8px/1.25 Manrope,Arial,sans-serif;z-index:16;pointer-events:none}
+.cover .translation-note,.closing .translation-note{color:#e5d9c3b3}
+html:lang(ar) .translation-note{font-family:Cairo,Arial,sans-serif;direction:rtl;text-align:left}

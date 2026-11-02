@@ -14,7 +14,7 @@
  failed:['Не удалось сохранить. Экспортируйте JSON.','Could not save. Export JSON.','تعذّر الحفظ. صدّر JSON.'],
  copied:['JSON скопирован','JSON copied','تم نسخ JSON'],imported:['Координаты загружены','Coordinates imported','تم استيراد الإحداثيات'],
  bad:['Неверный файл координат','Invalid coordinates file','ملف إحداثيات غير صالح'],
- objects:['Объекты','Places','المرافق'],trucks:['Фудтраки — 14','Food trucks — 14','عربات الطعام — 14'],topups:['Пополнение — 9','Top-up — 9','نقاط الشحن — 9'],security:['Охрана — 12','Security — 12','الحراسة — 12'],vip:['VIP — 1','VIP — 1','VIP — 1'],services:['Службы и площадки','Services and areas','الخدمات والساحات'],
+ objects:['Объекты','Places','المرافق'],trucks:['Фудтраки — 14','Food trucks — 14','عربات الطعام — 14'],topups:['Киоски пополнения','Top-up kiosks','أكشاك الشحن'],security:['Посты охраны','Security posts','نقاط الحراسة'],vip:['VIP — 1','VIP — 1','VIP — 1'],services:['Службы и площадки','Services and areas','الخدمات والساحات'],
  hint:['Перетащите метку. Стрелки: точный сдвиг выбранной метки. JSON хранит исходные пиксели и новые проценты отдельно.','Drag a marker. Arrow keys fine-tune the selected marker. JSON keeps source pixels separate from render percentages.','اسحب العلامة. استخدم الأسهم لضبط العلامة المحددة. يحفظ JSON بكسلات المصدر منفصلة عن نسب العرض.'],
  rides:['Аттракционы (19 аттракционов: 7 больших и 12 маленьких)','Attractions (19 rides: 7 large and 12 small)','الملاهي (19 لعبة: 7 كبيرة و12 صغيرة)']};
  const lang=()=>review?0:window.parkI18n.getLanguage()==='ar'?2:1,t=k=>words[k][lang()];
@@ -26,14 +26,16 @@
  const order=['main','second','arcade','food','karting','boats','sports','restaurant','rides','zoo','playground','amphitheatre','engineering','hr','cleaning','w2','vip',...Array.from({length:14},(_,i)=>'truck-'+(i+1)),...Array.from({length:9},(_,i)=>'topup-'+(i+1)),...Array.from({length:12},(_,i)=>'guard-'+(i+1))];
  const byId=new Map(all.map(p=>[p.id,p]));
  order.forEach((id,i)=>{const p=byId.get(id);p.displayNumber=i+1;Object.assign(p,window.MAP_REVISION.ownerLayout?.[id]||{});});
- const objectLabels={main:['Главный вход','Main entrance','المدخل الرئيسي'],second:['Второй вход','Second entrance','المدخل الثاني'],arcade:['Игровой центр','Arcade centre','مركز الألعاب'],food:['Фудкорт','Food court','ساحة الطعام'],karting:['Картинг','Karting','الكارتينغ'],boats:['Лодки','Boats','القوارب'],sports:['Спортивный комплекс','Sports complex','المجمع الرياضي'],restaurant:['Ресторан','Restaurant','المطعم'],zoo:['Зоопарк','Zoo','حديقة الحيوانات'],playground:['Детская площадка','Playground','منطقة ألعاب الأطفال']};
- const labelFor=p=>p.id==='rides'?t('rides'):objectLabels[p.id]?.[lang()]||p.labels[lang()];
+ const objectLabels={main:['Главный вход','Main entrance','المدخل الرئيسي'],second:['Второй вход','Second entrance','المدخل الثاني'],arcade:['Аркадный центр','Arcade centre','مركز ألعاب الأركيد'],food:['Фудкорт','Food court','ساحة الطعام'],karting:['Картинг','Karting','الكارتينغ'],boats:['Лодки','Boats','القوارب'],sports:['Спортивный комплекс','Sports complex','المجمع الرياضي'],restaurant:['Ресторан','Restaurant','المطعم'],zoo:['Зоопарк','Zoo','حديقة الحيوانات'],playground:['Детская площадка','Playground','منطقة ألعاب الأطفال']};
+ const labelFor=p=>p.id==='rides'?t('rides'):p.group==='topups'?t('topups'):p.group==='security'?t('security'):objectLabels[p.id]?.[lang()]||p.labels[lang()];
+ const numberOnlyIds=new Set(['amphitheatre','engineering','hr','cleaning','w2']);
  const nodes=new Map(originals.map(el=>[el.dataset.id,el]));
  points.forEach(p=>{const el=document.createElement('button');el.type='button';el.className='revision-pin';el.dataset.group=p.group;el.dataset.editorId=p.id;
   const model=document.createElement('span');model.className='revision-model';model.setAttribute('aria-hidden','true');
   if(p.group==='trucks'||p.group==='topups'){model.classList.add('sprite');model.style.backgroundPosition=p.group==='trucks'?'100% 0%':'0% 0%';}
   else{model.innerHTML='<svg viewBox="0 0 60 60"><ellipse cx="31" cy="53" rx="24" ry="5" fill="#263d3425"/><path d="M12 24 36 15 49 23 26 33Z" fill="#e8d6b8"/><path d="M12 24 26 33 26 53 12 44Z" fill="#a9bca5"/><path d="M26 33 49 23 49 43 26 53Z" fill="#e2e4ca"/><path d="M9 23 34 11 53 22 27 35Z" fill="#315f53"/><path d="M9 23 27 35 27 39 9 27Z" fill="#23473e"/><path d="M27 35 53 22 53 27 27 39Z" fill="#427867"/><path d="M32 37 43 32 43 42 32 47Z" fill="#72a9a3"/><path d="M16 32 22 36 22 44 16 40Z" fill="#608985"/></svg>';}
-  const badge=document.createElement('span');badge.className='revision-badge';badge.textContent=p.displayNumber;el.append(model,badge);host.append(el);nodes.set(p.id,el);});
+  const badge=document.createElement('span');badge.className='revision-badge';badge.textContent=p.displayNumber;if(numberOnlyIds.has(p.id)){el.classList.add('number-only');el.append(badge);}else el.append(model,badge);host.append(el);nodes.set(p.id,el);});
+ const translationNotes=[...document.querySelectorAll('.slide')].map(section=>{const note=document.createElement('p');note.className='translation-note';section.append(note);return note;});
  const bar=document.createElement('div');bar.className='map-editor-toolbar';bar.dataset.mapEditor='true';slide.append(bar);
  const title=slide.querySelector('h2'),legend=slide.querySelector('.map-legend'),status=document.createElement('p');status.className='map-editor-status';slide.append(status);
  const buttons={};['edit','save','copy','export','import'].forEach(action=>{const b=document.createElement('button');b.type='button';bar.append(b);buttons[action]=b;});
@@ -74,12 +76,14 @@
  function localize(){
   if(review){slide.setAttribute('dir','ltr');slide.querySelector('.eyebrow').textContent='БЕНГАЗИ / КАРТА ПАРКА';}
   title.textContent=t('title');Object.keys(buttons).forEach(k=>buttons[k].textContent=t(k));filterLabels.forEach(([el,k])=>el.textContent=t(k));
+  const noteText=['* Возможны неточности в переводе.','* Translation may contain inaccuracies.','* قد توجد أخطاء في الترجمة.'][lang()];translationNotes.forEach(note=>note.textContent=noteText);
   legend.replaceChildren();const nav=document.createElement('nav');nav.className='legend-nav';legend.append(nav);const scroll=document.createElement('div');scroll.className='legend-scroll';scroll.tabIndex=0;legend.append(scroll);
   const groups=[['objects',1,17],['trucks',18,31],['topups',32,40],['security',41,52]];
   groups.forEach(([group,start,end])=>{const heading=document.createElement('h3');heading.id='map-catalog-'+group;heading.textContent=start+'–'+end+' · '+t(group);scroll.append(heading);const jump=document.createElement('button');jump.type='button';jump.textContent=start+'–'+end;jump.title=t(group);jump.onclick=()=>{scroll.scrollTop+=heading.getBoundingClientRect().top-scroll.getBoundingClientRect().top;};nav.append(jump);
+   if(group==='topups'||group==='security'){heading.dataset.catalogRange=start+'-'+end;return;}
    const list=document.createElement('ol');list.start=start;scroll.append(list);
    order.slice(start-1,end).forEach(id=>{const p=byId.get(id),li=document.createElement('li'),number=document.createElement('button'),text=document.createElement('div'),name=document.createElement('span');li.dataset.catalogId=id;li.dataset.group=p.group;number.type='button';number.className='catalog-number';number.textContent=p.displayNumber;number.setAttribute('aria-label',p.displayNumber+'. '+labelFor(p));number.onclick=()=>{selected=id;draw();};name.textContent=labelFor(p);text.append(name);
-    if(p.sourceNumber){const note=document.createElement('small');note.textContent=["На схеме: ","Drawing: ","في المخطط: "][lang()]+p.sourceNumber;text.append(note);}li.append(number,text);list.append(li);});
+    if(p.sourceNumber){const note=document.createElement('small');note.textContent=["На схеме: ","Drawing: ","في المخطط: "][lang()]+p.sourceNumber+(review&&p.group==='trucks'?' · '+p.labels[1].replace('Food truck: ',''):'');text.append(note);}li.append(number,text);list.append(li);});
   });
   notice(storageError?t('failed'):t('draft'));draw();
  }
