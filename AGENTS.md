@@ -1,5 +1,33 @@
 # Working on the Benghazi presentation
 
+## CURRENT OWNER INSTRUCTIONS — 2026-11-02 (supersede historical scope below)
+
+The IT deck is now a presentation of the WHOLE PARK, Russian review only.
+Exact runtime order: (1) girl, «Новое дыхание Бенгази» and five mission points;
+(2) complete master map; (3) «Вкус парка»; (4) «Энергия приключений»;
+(5) «Команда за кадром»; (6) IT/cash/top-up map with BOTH routes;
+(7) park management system; (8) happiness finale with two parents and FIVE children.
+The initially agreed nine slides became EIGHT after the owner merged the intro
+and meaning into ONE opening slide. Five children appear ONLY in the finale.
+The first slide retains one familiar girl with the orange hair clip.
+
+Five mission themes around the girl: emotions/happiness, physical activity,
+psychological recovery, discoveries/history of Benghazi, and family/traditions.
+Keep the owner's provisional phrase «постоянно увеличивая число посетителей из
+внешних краёв». Do not invent attendance, history facts or performance figures.
+English and Arabic translations are a later stage. park-content.js separates
+editorial text; park-story.js selects and orders the eight runtime slides.
+Journey, future-options and risk slides are omitted from THIS assembly.
+
+Preserve ALL 52 latest owner coordinates in map-revision-data.js. Thematic maps
+clone the master and share its positions. Master 2 is «Второй вход», 8 is
+«Главный ресторан». Keep dragging, autosave, import/export and both guest routes.
+Keep the translation footnote on every slide. Do not publish to Netlify automatically.
+New unpublished art can be restored from the current self-contained HTML using
+restore_assets.py --offline /path/to/file.html. Media remain outside Git.
+
+## Historical IT-deck instructions and provenance
+
 Use the existing checkout, not a new worktree. Keep Git text-only. Read README.md and RECOVERY.md before editing. Restore missing media with `python3 restore_assets.py`; it uses the production URL and verifies every SHA256. Build with `python3 build.py`. Python standard library is sufficient for build/publish; browser checks use the installed Chromium/Playwright.
 
 Preserve the eight-slide story, original brand assets, RTL journey and latest two map routes. Do not revert to the original uploaded template or old route sequences. Make targeted corrections requested by the owner. Do not invent operational facts, capacities or guest data.

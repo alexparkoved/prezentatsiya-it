@@ -1,4 +1,33 @@
-# Benghazi Park — One card. One park experience.
+# Benghazi Park — новое дыхание Бенгази
+
+CURRENT local Russian review, 2026-11-02: an eight-slide presentation of the whole
+park. The first slide now combines the familiar girl, title and FIVE mission
+directions: emotions/happiness, movement/energy, calm/recovery, discoveries/history
+of Benghazi, family/traditions. The finale has two parents and five different
+children. Only the finale has five children.
+
+Current order: 1 intro/mission; 2 complete park map; 3 dining; 4 entertainment;
+5 support; 6 IT map with both routes; 7 park management; 8 happiness finale.
+The previously confirmed nine slides became eight after the owner requested ONE
+combined opening slide. The risk/future/journey slides are excluded from this
+assembly. Source templates remain for initialization and historical translation.
+park-story.js selects the final order; park-content.js holds Russian editorial
+text for later English/Arabic editions. All 52 owner marker positions are retained.
+
+Build: `python3 build.py --assets /path/to/media --out /path/to/delivery`.
+Recover all 18 assets, including unpublished illustrations, from the current
+self-contained delivery with:
+
+```sh
+python3 restore_assets.py --offline /path/to/Benghazi-Park-Presentation-RU.html --out /path/to/media
+```
+
+Recovery verifies file sizes and SHA256. Binary media stay outside Git. The current
+presentation is for LOCAL REVIEW; the public URL below still contains the older
+IT presentation. No Netlify publication has been performed. See
+docs/park-story-2026-11-02.md for current editorial decisions.
+
+## Historical IT-deck notes (current scope above takes precedence)
 
 Public presentation: https://benghazi-park-one-card.netlify.app/
 

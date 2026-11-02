@@ -239,3 +239,34 @@ html:lang(ar) .service-slide.with-routes #route-status{right:auto;left:0;font-si
 .theme-food .theme-legend-list li{font-size:14px;min-height:29px;line-height:1.3;padding-bottom:4px}
 .service-slide.with-routes .bottom-note{top:817px;bottom:auto;max-width:1000px;padding:0 0 0 14px;font-size:11px;line-height:1.3}
 html:lang(ar) .service-slide.with-routes .bottom-note{top:778px;font-size:13px;line-height:1.5}
+/* Park narrative: the merged mission cover and family finale follow the video mood. */
+.park-intro,.park-finale{background:radial-gradient(ellipse at 64% 48%,#714b2e 0%,#353629 43%,#202923 82%);color:#fff3db}
+.park-intro .brand,.park-finale .brand{filter:invert(1) grayscale(1);mix-blend-mode:screen;opacity:.9}
+.park-intro .eyebrow,.park-finale .eyebrow{color:#e5cfaa99}
+.park-intro h1{position:absolute;left:65px;top:111px;font:800 62px/1.06 Rubik,Arial,sans-serif;letter-spacing:-2px;color:#fff0d0;z-index:5}
+.park-intro h1 em{color:#ffa664}
+.story-lead{position:absolute;left:65px;right:65px;top:197px;font:600 20px/1.45 Manrope,Arial,sans-serif;color:#f4e0bd;z-index:5}
+.story-vision{position:absolute;left:65px;right:65px;top:238px;font:400 17px/1.4 Manrope,Arial,sans-serif;color:#cfbea0;z-index:5}
+.park-intro-art{position:absolute;left:540px;top:266px;width:520px;height:535px;object-fit:contain;object-position:center;z-index:3;mask-image:radial-gradient(ellipse 58% 59% at 50% 43%,#000 61%,transparent 96%)}
+.story-halo{position:absolute;left:565px;top:310px;width:470px;height:470px;border:1px solid #e4b76b35;border-radius:50%;box-shadow:0 0 65px #e3a65412;z-index:1}
+.story-halo:after{content:'';position:absolute;inset:30px;border:1px solid #e4b76b25;border-radius:50%}
+.story-links{position:absolute;inset:0;width:1600px;height:900px;pointer-events:none;z-index:2}
+.story-links path{fill:none;stroke:#d4ae7255;stroke-width:1.5}
+.story-direction{position:absolute;width:440px;z-index:5;padding-left:37px}
+.story-number{position:absolute;left:0;top:4px;font:800 13px Rubik,Arial,sans-serif;color:#ffb36e}
+.story-direction h3{font:800 21px/1.25 Rubik,Arial,sans-serif;color:#ffe8bd;letter-spacing:-.35px;margin-bottom:10px}
+.story-direction p{font:400 17px/1.5 Manrope,Arial,sans-serif;color:#d9cab0}
+.direction-1{left:65px;top:313px}.direction-2{left:1095px;top:337px}.direction-3{left:65px;top:492px}.direction-4{left:1095px;top:553px}.direction-5{left:65px;top:674px}
+.story-audience{position:absolute;left:65px;right:65px;top:796px;font:400 14px/1.4 Manrope,Arial,sans-serif;color:#cfbea0;z-index:6}
+.story-park{position:absolute;left:65px;right:65px;top:823px;font:400 14px/1.4 Manrope,Arial,sans-serif;color:#cfbea0;z-index:6}
+.park-intro footer,.park-finale footer{color:#e5cfaa88}
+.park-intro .translation-note,.park-finale .translation-note{color:#c8b79788}
+.park-finale{background:radial-gradient(ellipse at 72% 55%,#76603b 0%,#2f3d31 45%,#192c26 83%)}
+.park-family-art{position:absolute;right:20px;bottom:45px;width:900px;height:815px;object-fit:contain;z-index:3}
+.park-finale h1{position:absolute;left:65px;top:221px;max-width:660px;color:#fff0d0;font:800 63px/1.1 Rubik,Arial,sans-serif;letter-spacing:-1.7px;z-index:5}
+.park-finale h1 em{color:#ffba70}
+.finale-lead{position:absolute;left:65px;top:489px;width:580px;font:400 23px/1.55 Manrope,Arial,sans-serif;color:#ddcfb5;z-index:5}
+.finale-promise{position:absolute;left:65px;top:674px;width:580px;font:800 23px/1.4 Rubik,Arial,sans-serif;color:#ffe4ac;z-index:5}
+.finale-rings{position:absolute;left:758px;top:168px;width:690px;height:690px;border:1px solid #e7c88240;border-radius:50%;z-index:1}
+.finale-rings:before,.finale-rings:after{content:'';position:absolute;inset:43px;border:1px solid #e7c88230;border-radius:50%}.finale-rings:after{inset:93px}
+body.park-story #future-toggle,body.park-story #language-toggle{display:none!important}

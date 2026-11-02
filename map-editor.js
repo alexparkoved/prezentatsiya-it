@@ -2,7 +2,7 @@
 /* Draft map overlay. Original source pixels and editable render coordinates stay separate. */
 (()=>{
  const slide=document.querySelector('.map-slide'),board=document.getElementById('main-map'),host=board.querySelector('.map-pins');
- const review=new URLSearchParams(location.search).get('map-review')==='ru',key='benghazi-map-revision-v1';
+ const review=window.PARK_CONTENT?.language==='ru'||new URLSearchParams(location.search).get('map-review')==='ru',key='benghazi-map-revision-v1';
  const points=structuredClone(window.MAP_REVISION.points),base=window.PARK_MAP.places;
  let editing=false,selected=null,storageError=false;
  const words={
@@ -26,7 +26,7 @@
  const order=['main','second','arcade','food','karting','boats','sports','restaurant','rides','zoo','playground','amphitheatre','engineering','hr','cleaning','w2','vip',...Array.from({length:14},(_,i)=>'truck-'+(i+1)),...Array.from({length:9},(_,i)=>'topup-'+(i+1)),...Array.from({length:12},(_,i)=>'guard-'+(i+1))];
  const byId=new Map(all.map(p=>[p.id,p]));
  order.forEach((id,i)=>{const p=byId.get(id);p.displayNumber=i+1;Object.assign(p,window.MAP_REVISION.ownerLayout?.[id]||{});});
- const objectLabels={main:['Главный вход','Main entrance','المدخل الرئيسي'],second:['Второй вход','Second entrance','المدخل الثاني'],arcade:['Аркадный центр','Arcade centre','مركز ألعاب الأركيد'],food:['Фудкорт','Food court','ساحة الطعام'],karting:['Картинг','Karting','الكارتينغ'],boats:['Лодки','Boats','القوارب'],sports:['Спортивный комплекс','Sports complex','المجمع الرياضي'],restaurant:['Ресторан','Restaurant','المطعم'],zoo:['Зоопарк','Zoo','حديقة الحيوانات'],playground:['Детская площадка','Playground','منطقة ألعاب الأطفال']};
+ const objectLabels={main:['Главный вход','Main entrance','المدخل الرئيسي'],second:['Второй вход','Second entrance','المدخل الثاني'],arcade:['Аркадный центр','Arcade centre','مركز ألعاب الأركيد'],food:['Фудкорт','Food court','ساحة الطعام'],karting:['Картинг','Karting','الكارتينغ'],boats:['Лодки','Boats','القوارب'],sports:['Спортивный комплекс','Sports complex','المجمع الرياضي'],restaurant:['Главный ресторан','Main restaurant','المطعم الرئيسي'],zoo:['Зоопарк','Zoo','حديقة الحيوانات'],playground:['Детская площадка','Playground','منطقة ألعاب الأطفال']};
  const labelFor=p=>p.id==='rides'?t('rides'):p.group==='topups'?t('topups'):p.group==='security'?t('security'):objectLabels[p.id]?.[lang()]||p.labels[lang()];
  const numberOnlyIds=new Set(['amphitheatre','engineering','hr','cleaning','w2']);
  const nodes=new Map(originals.map(el=>[el.dataset.id,el]));
