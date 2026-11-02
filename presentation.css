@@ -226,3 +226,16 @@ html:lang(ar) .translation-note{font-family:Cairo,Arial,sans-serif;direction:rtl
 html:lang(ar) .theme-subtitle{font-family:Cairo,Arial,sans-serif;font-size:20px;text-align:right}
 html:lang(ar) .theme-map .theme-legend-list li{font-family:Cairo,Arial,sans-serif;font-size:18px;line-height:1.45;direction:rtl;text-align:right}
 html:lang(ar) .theme-map .theme-legend-heading{font-family:Cairo,Arial,sans-serif;font-size:14px}
+.service-slide.with-routes>h2{font-size:46px;top:126px;line-height:1.1;max-width:1470px}
+.service-slide.with-routes .route-panel{left:65px;right:auto;top:194px;width:1000px;padding-left:14px}
+.service-slide.with-routes .route-panel>p{font-size:10px;line-height:1.4;max-width:980px;margin-top:6px}
+.service-slide.with-routes .route-panel>b{max-width:650px}
+.service-slide.with-routes #route-status{position:absolute;right:0;top:0;margin:0;font-size:8px}
+.service-slide.with-routes .route-key{font-size:8px;margin-top:6px}
+.service-slide.with-routes .cashier-scene h3{font-size:22px}
+html:lang(ar) .service-slide.with-routes .route-panel{direction:rtl;padding-left:0;padding-right:14px}
+html:lang(ar) .service-slide.with-routes .route-panel>p{font-size:12px}
+html:lang(ar) .service-slide.with-routes #route-status{right:auto;left:0;font-size:10px}
+.theme-food .theme-legend-list li{font-size:14px;min-height:29px;line-height:1.3;padding-bottom:4px}
+.service-slide.with-routes .bottom-note{top:817px;bottom:auto;max-width:1000px;padding:0 0 0 14px;font-size:11px;line-height:1.3}
+html:lang(ar) .service-slide.with-routes .bottom-note{top:778px;font-size:13px;line-height:1.5}

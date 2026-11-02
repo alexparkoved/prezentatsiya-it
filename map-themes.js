@@ -6,12 +6,13 @@
   series:['НАПРАВЛЕНИЯ ПАРКА','PARK DIRECTIONS','مجالات الحديقة'],
   foodTitle:['Вкус парка','A taste of the park','مذاق الحديقة'],
   foodSub:['Питание в парке · ресторан, фуд-парк и 14 фудтраков','Park dining · a restaurant, food park and 14 food trucks','الطعام في الحديقة · مطعم ومنطقة مطاعم و14 عربة طعام'],
-  leisureTitle:['Энергия впечатлений','Time to explore','تجارب للمتعة'],
-  leisureSub:['Развлечения · девять направлений на одной карте','Entertainment · nine destinations on one map','الترفيه · تسع وجهات على خريطة واحدة'],
+  leisureTitle:['Энергия приключений','Time to explore','تجارب للمتعة'],
+  leisureSub:['Развлечения','Entertainment','الترفيه'],
   supportTitle:['Команда за кадром','Behind the scenes','فريق خلف الكواليس'],
   supportSub:['Службы обеспечения · охрана, HR, инженерная служба и уборка','Park support · security, HR, engineering and cleaning','خدمات الدعم · الحراسة والموارد البشرية والهندسة والنظافة'],
   paymentTitle:['Платёжная система','One payment system','نظام دفع موحد'],
   foodPark:['Фуд-парк','Food park','منطقة المطاعم'],
+  foodRestaurant:['Главный ресторан','Main restaurant','المطعم الرئيسي'],
   security:['Посты охраны','Security posts','نقاط الحراسة'],
   numbering:['Нумерация этого слайда','Numbers on this slide','ترقيم هذا السلايد'],
   foodFooter:['ПИТАНИЕ В ПАРКЕ','PARK DINING','الطعام في الحديقة'],
@@ -67,22 +68,44 @@
   paymentTargets.forEach((selector,i)=>{const el=payment.querySelector(selector),number=document.createElement('span');number.className='payment-local-number';number.textContent=i+1;el.append(number);});
   const carrierNumber=document.createElement('span');carrierNumber.className='payment-local-number carrier-local-number';carrierNumber.textContent='8';payment.append(carrierNumber);
  }
- function label(point){return point.id==='food'?t('foodPark'):point.group==='trucks'?point.label.replace(/^Фудтрак: |^Food truck: |^عربة طعام: /,''):point.label;}
+ function label(point){return point.id==='restaurant'?t('foodRestaurant'):point.id==='food'?t('foodPark'):point.group==='trucks'?['food truck — ','Food truck — ','عربة طعام — '][index()]+point.label.replace(/^Фудтрак: |^Food truck: |^عربة طعام: /,''):point.label;}
  function localize(){
   const catalog=new Map(editor.getCatalog().map(p=>[p.id,p]));
   views.forEach(({def,section,list})=>{
-   section.dataset.name=t(def.title);section.setAttribute('dir',language()==='ar'?'rtl':'ltr');
+   section.dataset.name=t(def.title);section.setAttribute('dir',language()==='ar'?'rtl':'ltr');section.setAttribute('lang',language());section.setAttribute('translate','no');
    text(section,'.eyebrow',t('series')+' / 0'+def.part);text(section,'h2',t(def.title));text(section,'.theme-subtitle',t(def.sub));text(section,'.theme-legend-heading',t('numbering'));
    text(section,'footer>span:first-child',t(def.footer)+' · 0'+def.part+' / 04');text(section,'.translation-note',t('note'));
    list.replaceChildren();
    def.ids.forEach((id,i)=>{const p=catalog.get(id);if(def.key==='support'&&p.group==='security'){if(id!=='guard-1')return;const row=document.createElement('li');row.className='theme-group-row';const num=document.createElement('span');num.className='catalog-number range-number';num.textContent='4–15';const name=document.createElement('span');name.textContent=t('security');row.append(num,name);list.append(row);return;}
     const row=document.createElement('li'),num=document.createElement('span'),name=document.createElement('span');row.dataset.themeLegendId=id;num.className='catalog-number';num.textContent=i+1;name.textContent=label(p);row.append(num,name);list.append(row);});
   });
-  paymentCopy();syncPositions();
+  paymentCopy();serviceCopy();syncPositions();
+ }
+ function serviceCopy(){
+  const service=document.querySelector('.service-slide');service.classList.add('with-routes');service.setAttribute('lang',language());service.setAttribute('translate','no');
+  if(language()==='ru'){
+   service.dataset.name='Одна карта. Кассы и маршруты';
+   const rows=[['.eyebrow','КАРТА ГОСТЯ / СЕРВИС В ПАРКЕ'],['h2','Одна карта. <em>Весь парк.</em>'],
+    ['.service-key>span:first-child','① КАССЫ ГЛАВНОГО И ВТОРОГО ВХОДОВ'],['.service-key>span:last-child','⊕ ПОПОЛНЕНИЕ В ПАРКЕ'],
+    ['.service-stats article:nth-child(1) h3','Главный<br>вход'],['.service-stats article:nth-child(2) h3','Второй<br>вход'],['.service-stats article:nth-child(3) h3','Внутри<br>парка'],
+    ['.service-stats article:nth-child(1) p','УНИВЕРСАЛЬНЫЕ КАССЫ'],['.service-stats article:nth-child(2) p','УНИВЕРСАЛЬНЫЕ КАССЫ'],['.service-stats article:nth-child(3) p','ТОЧКИ ПОПОЛНЕНИЯ'],
+    ['.cashier-scene h3','Пополните карту. Продолжайте.'],['.cashier-scene p','Карта или NFC-браслет.<br>Помощь кассира на месте.'],
+    ['.bottom-note','<strong>Пополнение баланса и входной билет — отдельные операции.</strong><br><span>Проверка баланса · Потеря карты · Возврат остатка — правила уточняются.</span>'],
+    ['footer>span:first-child','КАССЫ И ПОПОЛНЕНИЕ НА ПРОТЯЖЕНИИ ВСЕГО ВИЗИТА'],
+    ['.route-key>span:first-child','<i></i>ГЛАВНЫЙ ВХОД'],['.route-key>span:last-child','<i></i>ВТОРОЙ ВХОД']];
+   rows.forEach(([selector,content])=>text(service,selector,content,true));
+   service.querySelector('#route-layer').setAttribute('aria-label','Два маршрута гостя по парку');
+  }else{
+   text(service,'h2',language()==='ar'?'بطاقة واحدة. <em>الحديقة كلها.</em>':'One card. <em>Across the park.</em>',true);
+  }
+  window.parkRoutes.refreshCopy();
  }
  function syncPositions(){
   const catalog=new Map(editor.getCatalog().map(p=>[p.id,p]));
   views.forEach(({def,section})=>def.ids.forEach((id,i)=>{const p=catalog.get(id),el=section.querySelector('[data-editor-id="'+id+'"]');el.style.left=p.x+'%';el.style.top=p.y+'%';el.hidden=false;el.dataset.themeNumber=i+1;el.removeAttribute('data-map-number');el.title=(i+1)+'. '+label(p);el.setAttribute('aria-label',el.title);el.querySelector('.map-number,.revision-badge').textContent=i+1;}));
+  const service=document.getElementById('service-map');
+  service.querySelectorAll('.map-pin').forEach(el=>{const id=el.dataset.id.startsWith('service-')?el.dataset.id.replace('service-','topup-'):el.dataset.id,p=catalog.get(id);if(p){el.style.left=p.x+'%';el.style.top=p.y+'%';}});
+  window.parkRoutes.updatePositions([...catalog.values()]);
  }
  document.addEventListener('parkmapchange',syncPositions);document.addEventListener('parklanguagechange',localize);
  localize();

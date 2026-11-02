@@ -18,3 +18,11 @@ The three themed maps clone the master terrain/geometry and subscribe to master
 position changes; do not create independent coordinate sets. Numbers restart per
 theme. The latest owner layout and its exact positions remain in map-revision-data.js.
 This working revision is local review only. Do not publish to Netlify automatically.
+
+Latest Russian review corrections: dining marker 1 is Main restaurant; local 3–16
+labels start with the owner's exact `food truck` prefix. Entertainment has the Russian
+title «Энергия приключений» and subtitle «Развлечения». Security is explicitly
+«Посты охраны». Guest routes now belong on the service-slide cash/top-up map only:
+existing steps 1–3 reveal cash desks/top-up, step 4 orange, step 5 blue with orange
+retained. Source route sequences/waypoints stay in map-data.js; render endpoints
+are adapted to the current master coordinates. Do not reorder the deck yet.

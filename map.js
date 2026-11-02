@@ -36,6 +36,12 @@
  function cancel(){token++;cancelAnimationFrame(raf);clearTimeout(timer);animations.forEach(a=>a.cancel());animations=[];completed=[false,false];groups.forEach(g=>{g.group.classList.remove('playing','complete');g.paths.forEach(p=>{p.ink.style.strokeDashoffset='1';p.halo.style.strokeDashoffset='1';});});}
  function complete(index){const g=groups[index];g.paths.forEach(p=>{p.ink.style.strokeDashoffset='0';p.halo.style.strokeDashoffset='0';});g.group.classList.remove('playing');g.group.classList.add('complete');completed[index]=true;}
  function routeCopy(){
+  if(window.parkMapEditor?.getLanguage()==='ru'){
+   const names={main:'Главный вход',second:'Второй вход',arcade:'Аркадный центр',rides:'Аттракционы',food:'Фуд-парк',playground:'Детская площадка',restaurant:'Ресторан',boats:'Лодки',zoo:'Зоопарк'};
+   if(current<=0){title.textContent='ДВА МАРШРУТА ГОСТЯ';caption.textContent='После касс и пополнения — два примера прогулки по парку.';status.textContent='ОРАНЖЕВЫЙ · ГОЛУБОЙ';return;}
+   const i=current-1,r=data.routes[i],done=completed[i];title.textContent=done&&i===1?'ОБА МАРШРУТА ГОСТЯ':(i===0?'МАРШРУТ 1 · ГЛАВНЫЙ ВХОД':'МАРШРУТ 2 · ВТОРОЙ ВХОД');
+   caption.textContent=r.ids.map(id=>names[id]).join(' → ');status.textContent=done?(i===0?'ПЕРВЫЙ МАРШРУТ ПОКАЗАН':'ОБА МАРШРУТА ПОКАЗАНЫ'):'ДАЛЕЕ: '+names[r.ids[currentLeg+1]].toUpperCase();return;
+  }
   if(current<=0){title.textContent=t('route.readyTitle');caption.textContent=t('route.readyCaption');status.textContent=t('route.ready');return;}
   const index=current-1,r=data.routes[index],done=completed[index];
   title.textContent=done&&index===1?t('route.completeTitle'):t(index===0?'route.one':'route.two')+' · '+t(index===0?'route.main':'route.second');
@@ -53,7 +59,15 @@
   if(value===0){routeCopy();return;}
   if(value===2)complete(0);const g=groups[value-1];g.group.classList.add('playing');runLeg(value-1,0,token);
  }
- window.parkRoutes={setPhase,reset:()=>setPhase(0),replay:(phase=current)=>setPhase(phase,true),durationFor:phase=>phase?6*(legDuration+pause):0,getState:()=>({phase:current,completed:[...completed],routes:data.routes.map(r=>({name:r.name,color:r.color,ids:r.ids})),ready:true})};
+ let positionStamp='';
+ function updatePositions(positions){
+  const lookup=new Map(positions.map(p=>[p.id,p]));const stamp=data.places.map(p=>{const q=lookup.get(p.id)||p;return p.id+':'+q.x+','+q.y;}).join('|');if(stamp===positionStamp)return;positionStamp=stamp;
+  data.routes.forEach((r,i)=>r.legs.forEach((original,j)=>{const from=lookup.get(r.ids[j])||data.places.find(p=>p.id===r.ids[j]),to=lookup.get(r.ids[j+1])||data.places.find(p=>p.id===r.ids[j+1]),start=original[0],end=original.at(-1);
+   const lengths=[0];original.slice(1).forEach((p,k)=>lengths.push(lengths.at(-1)+Math.hypot(p[0]-original[k][0],p[1]-original[k][1])));const total=lengths.at(-1)||1;
+   const points=original.map(([x,y],k)=>{const t=lengths[k]/total;return [x+(from.x-start[0])*(1-t)+(to.x-end[0])*t,y+(from.y-start[1])*(1-t)+(to.y-end[1])*t];});const d=path(points);groups[i].paths[j].ink.setAttribute('d',d);groups[i].paths[j].halo.setAttribute('d',d);
+  }));setPhase(current,true);
+ }
+ window.parkRoutes={setPhase,reset:()=>setPhase(0),replay:(phase=current)=>setPhase(phase,true),refreshCopy:routeCopy,updatePositions,durationFor:phase=>phase?6*(legDuration+pause):0,getState:()=>({phase:current,completed:[...completed],routes:data.routes.map(r=>({name:r.name,color:r.color,ids:r.ids})),ready:true})};
  window.parkMap={getPositions:()=>structuredClone(data.places),getServicePoints:()=>structuredClone(data.topups)};
  document.addEventListener('parklanguagechange',routeCopy);
  setPhase(0);

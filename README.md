@@ -11,6 +11,12 @@ same viewing session. The production URL above still refers to the published dec
 these new views have not been published. Use `?map-review=ru#4` for Russian topic
 review; `#4` through `#7` open the four new slides directly.
 
+The guest routes are restored on the card-service map (`#9` in this working order):
+steps 1–3 show the 10/3 entrance cash desks and nine internal top-up points; step 4
+draws the orange route, and step 5 retains orange while blue draws. Route endpoints
+and service markers follow the current master positions. The final assembly order
+is still pending the owner's next instructions.
+
 Eight-slide animated English/Arabic presentation for Benghazi Park, including the approved penultimate slide “The risks of delay”. One small English / العربية switch appears at the bottom right of the first slide only. The chosen language applies to all eight slides, map legends, route captions, controls and accessibility labels. Switching preserves the current reveal. A fresh viewing session starts in English; `?lang=ar` opens directly in Arabic.
 
 The future-options telephone slide can be excluded, leaving seven slides. Page numbering updates automatically: risk is 07/08 and closing 08/08 by default, or 06/07 and 07/07 when Future is off. The final outcome remains last in both modes.
