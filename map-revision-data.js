@@ -1,10 +1,10 @@
 window.MAP_REVISION={
-  "version": 1,
+  "version": 2,
   "sourceFrame": {
     "width": 1587,
     "height": 1123
   },
-  "placementStatus": "Draft landmark placement; owner review required. Primary placement references: first two processed maps supplied 2026-11-02 (objects/services and guest routes). Additional v17 PNGs supplement those references; do not restart placement from them.",
+  "placementStatus": "Food truck and top-up membership/numbering follows only the owner-supplied v17 drawing. Other objects use the owner layout when available. Render placements remain landmark-aligned, editable draft coordinates.",
   "points": [
     {
       "id": "truck-1",
@@ -14,14 +14,16 @@ window.MAP_REVISION={
         920,
         217
       ],
-      "x": 59,
-      "y": 21,
+      "x": 62.9,
+      "y": 18.7,
       "labels": [
-        "Фудтрак 1",
-        "Food truck 1",
-        "عربة طعام 1"
+        "Фудтрак: Сфинз",
+        "Food truck: Sfinz",
+        "عربة طعام: سفنز"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 1,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-2",
@@ -31,14 +33,16 @@ window.MAP_REVISION={
         774,
         275
       ],
-      "x": 49,
-      "y": 23,
+      "x": 50.3,
+      "y": 21.8,
       "labels": [
-        "Фудтрак 2",
-        "Food truck 2",
-        "عربة طعام 2"
+        "Фудтрак: Мбаттан",
+        "Food truck: Mubattan",
+        "عربة طعام: مبطن"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 2,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-3",
@@ -48,14 +52,16 @@ window.MAP_REVISION={
         824,
         345
       ],
-      "x": 53,
-      "y": 32,
+      "x": 54.2,
+      "y": 32.5,
       "labels": [
-        "Фудтрак 3",
-        "Food truck 3",
-        "عربة طعام 3"
+        "Фудтрак: Пицца",
+        "Food truck: Pizza",
+        "عربة طعام: بيتزا"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 3,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-4",
@@ -65,14 +71,16 @@ window.MAP_REVISION={
         906,
         411
       ],
-      "x": 60,
-      "y": 39,
+      "x": 60.2,
+      "y": 35.1,
       "labels": [
-        "Фудтрак 4",
-        "Food truck 4",
-        "عربة طعام 4"
+        "Фудтрак: Картофель фри с начинкой",
+        "Food truck: Loaded Fries",
+        "عربة طعام: بطاطس مقلية بإضافات"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 4,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-5",
@@ -82,14 +90,16 @@ window.MAP_REVISION={
         819,
         455
       ],
-      "x": 54,
-      "y": 43,
+      "x": 55.2,
+      "y": 40.6,
       "labels": [
-        "Фудтрак 5",
-        "Food truck 5",
-        "عربة طعام 5"
+        "Фудтрак: Бакбака",
+        "Food truck: Bakbaka",
+        "عربة طعام: مبكبكة"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 5,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-6",
@@ -99,14 +109,16 @@ window.MAP_REVISION={
         640,
         445
       ],
-      "x": 43,
-      "y": 38,
+      "x": 42.430824829552165,
+      "y": 37.83112386019686,
       "labels": [
-        "Фудтрак 6",
-        "Food truck 6",
-        "عربة طعام 6"
+        "Фудтрак: Бургер",
+        "Food truck: Burger",
+        "عربة طعام: برغر"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-adjusted-v17-point",
+      "sourceNumber": 6,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-7",
@@ -116,14 +128,16 @@ window.MAP_REVISION={
         690,
         479
       ],
-      "x": 46,
-      "y": 44,
+      "x": 47.4,
+      "y": 39.7,
       "labels": [
-        "Фудтрак 7",
-        "Food truck 7",
-        "عربة طعام 7"
+        "Фудтрак: Хот-доги",
+        "Food truck: Footlong Hot Dogs",
+        "عربة طعام: هوت دوغ"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 7,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-8",
@@ -133,14 +147,16 @@ window.MAP_REVISION={
         771,
         598
       ],
-      "x": 51,
-      "y": 59,
+      "x": 52.1,
+      "y": 55.2,
       "labels": [
-        "Фудтрак 8",
-        "Food truck 8",
-        "عربة طعام 8"
+        "Фудтрак: Ливийские сладости",
+        "Food truck: Libyan Sweets",
+        "عربة طعام: حلويات ليبية"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 8,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-9",
@@ -150,14 +166,16 @@ window.MAP_REVISION={
         693,
         666
       ],
-      "x": 46,
-      "y": 66,
+      "x": 45.6,
+      "y": 64,
       "labels": [
-        "Фудтрак 9",
-        "Food truck 9",
-        "عربة طعام 9"
+        "Фудтрак: Ливийский кускус",
+        "Food truck: Libyan Couscous",
+        "عربة طعام: كسكسي ليبي"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 9,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-10",
@@ -167,14 +185,16 @@ window.MAP_REVISION={
         992,
         626
       ],
-      "x": 67,
-      "y": 59,
+      "x": 68.8,
+      "y": 60.5,
       "labels": [
-        "Фудтрак 10",
-        "Food truck 10",
-        "عربة طعام 10"
+        "Фудтрак: Чипсы с начинкой",
+        "Food truck: Loaded Chips",
+        "عربة طعام: رقائق بطاطس بإضافات"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 10,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-11",
@@ -184,14 +204,16 @@ window.MAP_REVISION={
         454,
         771
       ],
-      "x": 25,
-      "y": 72,
+      "x": 20.2,
+      "y": 67.8,
       "labels": [
-        "Фудтрак 11",
-        "Food truck 11",
-        "عربة طعام 11"
+        "Фудтрак: Шаурма",
+        "Food truck: Shawarma",
+        "عربة طعام: شاورما"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 11,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-12",
@@ -201,14 +223,16 @@ window.MAP_REVISION={
         586,
         776
       ],
-      "x": 34,
-      "y": 74,
+      "x": 32,
+      "y": 73.6,
       "labels": [
-        "Фудтрак 12",
-        "Food truck 12",
-        "عربة طعام 12"
+        "Фудтрак: Блинчики",
+        "Food truck: Pan Crepes",
+        "عربة طعام: فطائر"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 12,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-13",
@@ -218,14 +242,16 @@ window.MAP_REVISION={
         829,
         763
       ],
-      "x": 55,
+      "x": 52.8,
       "y": 74,
       "labels": [
-        "Фудтрак 13",
-        "Food truck 13",
-        "عربة طعام 13"
+        "Фудтрак: Садж",
+        "Food truck: Saj",
+        "عربة طعام: صاج"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 13,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "truck-14",
@@ -235,14 +261,16 @@ window.MAP_REVISION={
         1165,
         489
       ],
-      "x": 84,
-      "y": 44,
+      "x": 84.5,
+      "y": 46.8,
       "labels": [
-        "Фудтрак 14",
-        "Food truck 14",
-        "عربة طعام 14"
+        "Фудтрак: Курица",
+        "Food truck: Chicken",
+        "عربة طعام: دجاج"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 14,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "topup-1",
@@ -253,13 +281,15 @@ window.MAP_REVISION={
         186
       ],
       "x": 55,
-      "y": 15,
+      "y": 12.5,
       "labels": [
         "Игровой центр B1",
         "Arcade centre B1",
         "مركز الألعاب B1"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 1,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "topup-2",
@@ -276,7 +306,9 @@ window.MAP_REVISION={
         "Attraction square E2",
         "ساحة الملاهي E2"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 2,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "topup-3",
@@ -286,14 +318,16 @@ window.MAP_REVISION={
         881,
         290
       ],
-      "x": 61,
-      "y": 27,
+      "x": 60.2,
+      "y": 26.9,
       "labels": [
         "D4 у озера L2",
         "D4 by lake L2",
         "D4 بجوار بحيرة L2"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 3,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "topup-4",
@@ -303,14 +337,16 @@ window.MAP_REVISION={
         793,
         483
       ],
-      "x": 52,
-      "y": 47,
+      "x": 50.8,
+      "y": 41.4,
       "labels": [
         "Угол L1 у туалетов",
         "L1 corner by toilets",
         "زاوية L1 بجوار دورات المياه"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 4,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "topup-5",
@@ -320,14 +356,16 @@ window.MAP_REVISION={
         881,
         533
       ],
-      "x": 60,
-      "y": 52,
+      "x": 58.6,
+      "y": 48.9,
       "labels": [
         "Верхний торец киосков T2",
         "Upper end of T2 kiosks",
         "الطرف العلوي لأكشاك T2"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 5,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "topup-6",
@@ -337,14 +375,16 @@ window.MAP_REVISION={
         1047,
         341
       ],
-      "x": 72.5,
-      "y": 33.5,
+      "x": 70.22329931820866,
+      "y": 30.460229483543493,
       "labels": [
         "Главный ресторан L3",
         "Main restaurant L3",
         "المطعم الرئيسي L3"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-adjusted-v17-point",
+      "sourceNumber": 6,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "topup-7",
@@ -354,14 +394,16 @@ window.MAP_REVISION={
         1148,
         596
       ],
-      "x": 77,
-      "y": 64,
+      "x": 78.8,
+      "y": 60.8,
       "labels": [
         "Касса картинга",
         "Karting cashier",
         "شباك الكارتينغ"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 7,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "topup-8",
@@ -371,14 +413,16 @@ window.MAP_REVISION={
         619,
         770
       ],
-      "x": 32,
-      "y": 70,
+      "x": 32.9,
+      "y": 71,
       "labels": [
         "Площадь зоопарка Z2",
         "Zoo square Z2",
         "ساحة حديقة الحيوانات Z2"
       ],
-      "status": "draft-landmark-review"
+      "status": "v17-landmark-aligned-draft",
+      "sourceNumber": 8,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "topup-9",
@@ -388,14 +432,16 @@ window.MAP_REVISION={
         855,
         738
       ],
-      "x": 57,
-      "y": 72,
+      "x": 58.544904034072694,
+      "y": 69.46685790295291,
       "labels": [
         "Лодки U1 у фудтрака 13",
         "Boats U1 by food truck 13",
         "القوارب U1 بجوار عربة الطعام 13"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-adjusted-v17-point",
+      "sourceNumber": 9,
+      "sourceDrawing": "FOOD TRUCKS, CARD TOP-UP POINTS AND RESERVE SPOTS (v.17)"
     },
     {
       "id": "guard-1",
@@ -412,7 +458,7 @@ window.MAP_REVISION={
         "Security post 1",
         "نقطة حراسة 1"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "guard-2",
@@ -429,7 +475,7 @@ window.MAP_REVISION={
         "Security post 2",
         "نقطة حراسة 2"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "guard-3",
@@ -446,7 +492,7 @@ window.MAP_REVISION={
         "Security post 3",
         "نقطة حراسة 3"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "guard-4",
@@ -463,7 +509,7 @@ window.MAP_REVISION={
         "Security post 4",
         "نقطة حراسة 4"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "guard-5",
@@ -480,7 +526,7 @@ window.MAP_REVISION={
         "Security post 5",
         "نقطة حراسة 5"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "guard-6",
@@ -497,7 +543,7 @@ window.MAP_REVISION={
         "Security post 6",
         "نقطة حراسة 6"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "guard-7",
@@ -507,14 +553,14 @@ window.MAP_REVISION={
         345,
         680
       ],
-      "x": 15,
+      "x": 13.699028181833521,
       "y": 64,
       "labels": [
         "Пост охраны 7",
         "Security post 7",
         "نقطة حراسة 7"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "guard-8",
@@ -531,7 +577,7 @@ window.MAP_REVISION={
         "Security post 8",
         "نقطة حراسة 8"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "guard-9",
@@ -548,7 +594,7 @@ window.MAP_REVISION={
         "Security post 9",
         "نقطة حراسة 9"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "guard-10",
@@ -558,14 +604,14 @@ window.MAP_REVISION={
         609,
         922
       ],
-      "x": 40,
-      "y": 88,
+      "x": 47.48058795445725,
+      "y": 88.8443806990157,
       "labels": [
         "Пост охраны 10",
         "Security post 10",
         "نقطة حراسة 10"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "guard-11",
@@ -575,14 +621,14 @@ window.MAP_REVISION={
         840,
         909
       ],
-      "x": 62,
-      "y": 77,
+      "x": 65.57767249995781,
+      "y": 73.45360106413406,
       "labels": [
         "Пост охраны 11",
         "Security post 11",
         "نقطة حراسة 11"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "guard-12",
@@ -592,14 +638,14 @@ window.MAP_REVISION={
         692,
         1034
       ],
-      "x": 40,
-      "y": 96,
+      "x": 35.36528789778192,
+      "y": 97.85763753783453,
       "labels": [
         "Пост охраны 12",
         "Security post 12",
         "نقطة حراسة 12"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "vip",
@@ -616,7 +662,7 @@ window.MAP_REVISION={
         "VIP",
         "VIP"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "amphitheatre",
@@ -626,14 +672,14 @@ window.MAP_REVISION={
         660,
         395
       ],
-      "x": 41,
-      "y": 30,
+      "x": 47.42354835219699,
+      "y": 31.688761398031392,
       "labels": [
         "Амфитеатр",
         "Amphitheatre",
         "المسرح المكشوف"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "engineering",
@@ -650,7 +696,7 @@ window.MAP_REVISION={
         "Engineering block",
         "المبنى الهندسي"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "hr",
@@ -667,7 +713,7 @@ window.MAP_REVISION={
         "HR",
         "الموارد البشرية"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "cleaning",
@@ -684,7 +730,7 @@ window.MAP_REVISION={
         "Cleaning office",
         "مكتب النظافة"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     },
     {
       "id": "w2",
@@ -701,7 +747,134 @@ window.MAP_REVISION={
         "Activity area",
         "الساحة"
       ],
-      "status": "draft-landmark-review"
+      "status": "owner-position"
     }
+  ],
+  "catalogVersion": 2,
+  "foodPointRevision": "v17-only-2026-11-02",
+  "seedRevision": "v2-8b36ae007dfdde81",
+  "ownerLayout": {
+    "main": {
+      "x": 68.39441812498946,
+      "y": 12.602591945708959
+    },
+    "second": {
+      "x": 15.7,
+      "y": 67.5
+    },
+    "arcade": {
+      "x": 57,
+      "y": 13.5
+    },
+    "rides": {
+      "x": 50,
+      "y": 31.3
+    },
+    "food": {
+      "x": 60.92621477270809,
+      "y": 57.52651367763767
+    },
+    "restaurant": {
+      "x": 72.5,
+      "y": 33.5
+    },
+    "karting": {
+      "x": 74.9,
+      "y": 65.2
+    },
+    "boats": {
+      "x": 56.5,
+      "y": 75.2
+    },
+    "sports": {
+      "x": 34.5,
+      "y": 91.3
+    },
+    "zoo": {
+      "x": 30.4262147727081,
+      "y": 52.32247720393722
+    },
+    "playground": {
+      "x": 63,
+      "y": 40.5
+    },
+    "guard-1": {
+      "x": 59,
+      "y": 6
+    },
+    "guard-2": {
+      "x": 73,
+      "y": 15
+    },
+    "guard-3": {
+      "x": 41,
+      "y": 19
+    },
+    "guard-4": {
+      "x": 52,
+      "y": 27
+    },
+    "guard-5": {
+      "x": 18,
+      "y": 36
+    },
+    "guard-6": {
+      "x": 34,
+      "y": 57
+    },
+    "guard-7": {
+      "x": 13.699028181833521,
+      "y": 64
+    },
+    "guard-8": {
+      "x": 79,
+      "y": 53
+    },
+    "guard-9": {
+      "x": 22,
+      "y": 83
+    },
+    "guard-10": {
+      "x": 47.48058795445725,
+      "y": 88.8443806990157
+    },
+    "guard-11": {
+      "x": 65.57767249995781,
+      "y": 73.45360106413406
+    },
+    "guard-12": {
+      "x": 35.36528789778192,
+      "y": 97.85763753783453
+    },
+    "vip": {
+      "x": 88,
+      "y": 28
+    },
+    "amphitheatre": {
+      "x": 47.42354835219699,
+      "y": 31.688761398031392
+    },
+    "engineering": {
+      "x": 24,
+      "y": 58
+    },
+    "hr": {
+      "x": 9,
+      "y": 47
+    },
+    "cleaning": {
+      "x": 23,
+      "y": 67
+    },
+    "w2": {
+      "x": 81,
+      "y": 38
+    }
+  },
+  "ownerLayoutSha256": "8b36ae007dfdde81a3581efaaee877dfacee571fa1a3a762cacf606382832435",
+  "ownerAdjustedFoodPoints": [
+    "topup-6",
+    "topup-9",
+    "truck-6"
   ]
 };
